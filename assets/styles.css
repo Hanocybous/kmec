@@ -287,3 +287,5 @@ details p { padding: 0 22px 18px; margin: 0; color: var(--muted); }
 .res__body small { display: block; margin-top: 6px; color: var(--muted); font-size: .8rem; font-weight: 600; }
 .res__go { color: var(--blue); font-weight: 700; }
 @media (max-width: 860px) { .res-groups { grid-template-columns: 1fr; } }
+.res__eyp { color: var(--blue); }
+.res-credit { margin-top: 28px; padding: 14px 18px; background: var(--tint); border-left: 4px solid var(--blue); border-radius: 8px; font-size: .9rem; color: var(--muted); }

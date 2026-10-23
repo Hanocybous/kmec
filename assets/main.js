@@ -145,10 +145,10 @@ const COMMITTEES = [
 // ---------- Resources (files in assets/docs) ----------
 const RESOURCES = {
   delegates: [
-    { file: "resolution-writing-guide.pdf", pages: 11, size: "83 KB",
+    { file: "resolution-writing-guide.pdf", eyp: true, pages: 11, size: "83 KB",
       title: t("Guide to Writing a Resolution", "Οδηγός σύνταξης ψηφίσματος"),
       desc: t("What a resolution is, its three parts, and how to write strong introductory and operative clauses.", "Τι είναι ένα ψήφισμα, τα τρία μέρη του και πώς γράφονται καλές εισαγωγικές και διατακτικές ρήτρες.") },
-    { file: "resolution-phrases.pdf", pages: 4, size: "45 KB",
+    { file: "resolution-phrases.pdf", eyp: true, pages: 4, size: "45 KB",
       title: t("Resolution Phrases", "Φράσεις ψηφίσματος"),
       desc: t("The list of opening phrases for introductory and operative clauses. Keep it open while you write.", "Η λίστα με τις φράσεις έναρξης για εισαγωγικές και διατακτικές ρήτρες. Κράτα τη δίπλα σου όσο γράφεις.") },
     { file: "resolution-typing-slides.pdf", pages: 21, size: "593 KB",
@@ -159,16 +159,16 @@ const RESOURCES = {
     { file: "chairing-101.pdf", pages: 17, size: "773 KB",
       title: t("Chairing 101", "Chairing 101"),
       desc: t("What a chairperson does: facilitating, leading and keeping the committee on track.", "Ο ρόλος του συντονιστή: διευκόλυνση, καθοδήγηση και οργάνωση της επιτροπής.") },
-    { file: "chairs-guide-committee-work.pdf", pages: 32, size: "443 KB",
+    { file: "chairs-guide-committee-work.pdf", eyp: true, pages: 32, size: "443 KB",
       title: t("Chairs' Guide to Committee Work", "Οδηγός συντονιστών για τη δουλειά της επιτροπής"),
       desc: t("European Youth Parliament handbook on structuring committee work, brainstorming, facilitating discussion and feedback.", "Εγχειρίδιο του Ευρωπαϊκού Κοινοβουλίου Νέων για την οργάνωση της επιτροπής, τον καταιγισμό ιδεών, τη διευκόλυνση της συζήτησης και την ανατροφοδότηση.") },
     { file: "topic-overview-guide.pdf", pages: 10, size: "105 KB",
       title: t("Topic Overview Guide", "Οδηγός για το Topic Overview"),
       desc: t("How to write your committee's topic overview: introduction, key terms, main conflicts, key actors and food for thought.", "Πώς γράφεται το topic overview της επιτροπής: εισαγωγή, βασικοί όροι, κύρια ζητήματα, βασικοί παράγοντες και ερωτήματα για σκέψη.") },
-    { file: "teambuilding.pdf", pages: 21, size: "3.6 MB",
+    { file: "teambuilding.pdf", eyp: true, pages: 21, size: "3.6 MB",
       title: t("Teambuilding Handbook (2004)", "Εγχειρίδιο teambuilding (2004)"),
       desc: t("European Youth Parliament handbook of teambuilding games, each with step-by-step instructions and the equipment needed (2004 edition, scanned).", "Εγχειρίδιο παιχνιδιών teambuilding του Ευρωπαϊκού Κοινοβουλίου Νέων, με οδηγίες βήμα προς βήμα και τα απαραίτητα υλικά (έκδοση 2004, σκαναρισμένο).") },
-    { file: "teambuilding-games.pdf", pages: 16, size: "2.3 MB",
+    { file: "teambuilding-games.pdf", eyp: true, pages: 16, size: "2.3 MB",
       title: t("Teambuilding Games (2005)", "Παιχνίδια teambuilding (2005)"),
       desc: t("Updated edition with an index: name games, warm-ups, energisers, trust and problem-solving games (2005 edition, scanned).", "Ενημερωμένη έκδοση με ευρετήριο: παιχνίδια γνωριμίας, ζεστάματος, ενέργειας, εμπιστοσύνης και επίλυσης προβλημάτων (έκδοση 2005, σκαναρισμένο).") },
   ],
@@ -265,7 +265,8 @@ const EL = {
   "nav.com": "Επιτροπές", "nav.res": "Υλικό",
   "res.eyebrow": "Υλικό", "res.title": "Προετοιμασία για το KMEC",
   "res.lede": "Οδηγοί για να προετοιμαστείς, είτε είναι το πρώτο σου συνέδριο είτε συντονίζεις επιτροπή. Όλα τα αρχεία είναι PDF που ανοίγουν στον browser ή κατεβαίνουν.",
-  "res.del": "Για συνέδρους", "res.chair": "Για συντονιστές", "nav.sch": "Πρόγραμμα", "nav.reg": "Εγγραφή",
+  "res.del": "Για συνέδρους", "res.chair": "Για συντονιστές",
+  "res.credit": "Οι οδηγοί με την ένδειξη «European Youth Parliament» είναι υλικό του <a href=\"https://eyp.org\" target=\"_blank\" rel=\"noopener\">Ευρωπαϊκού Κοινοβουλίου Νέων (EYP)</a> και κοινοποιούνται εδώ για εκπαιδευτικούς σκοπούς. Όλα τα δικαιώματα ανήκουν στο EYP.", "nav.sch": "Πρόγραμμα", "nav.reg": "Εγγραφή",
   "com.eyebrow": "Επιτροπές", "com.title": "Επτά επιτροπές, μία Ευρώπη",
   "com.lede": "Έξι επιτροπές λειτουργούν στα αγγλικά και μία στα γαλλικά, με έμπειρους συντονιστές. Τα αστέρια δείχνουν τη δυσκολία κάθε θέματος, ώστε να επιλέξεις αυτό που σου ταιριάζει.",
   "sch.eyebrow": "Πρόγραμμα", "sch.title": "Τρεις μέρες στο KMEC", "sch.badge": "Προσωρινό",
@@ -492,7 +493,7 @@ function renderResources() {
     <li><a class="res" href="assets/docs/${r.file}" target="_blank" rel="noopener">
       <span class="res__icon" aria-hidden="true">PDF</span>
       <span class="res__body"><b>${r.title[lang]}</b><span>${r.desc[lang]}</span>
-      <small>${r.pages} ${u.pages} · ${r.size}</small></span>
+      <small>${r.pages} ${u.pages} · ${r.size}${r.eyp ? ` · <span class="res__eyp">European Youth Parliament</span>` : ""}</small></span>
       <span class="res__go" aria-hidden="true">↗</span>
     </a></li>`;
   document.getElementById("resDelegates").innerHTML = RESOURCES.delegates.map(item).join("");
