@@ -24,15 +24,15 @@
     </a>
     <nav class="nav__links" id="navLinks">
       <a href="#about" data-i18n="nav.about">About</a>
-      <a href="#how" data-i18n="nav.how">How it works</a>
-      <a href="#goals" data-i18n="nav.goals">Goals</a>
-      <a href="#join" data-i18n="nav.join">Join</a>
+      <a href="#committees" data-i18n="nav.com">Committees</a>
+      <a href="#schedule" data-i18n="nav.sch">Schedule</a>
       <a href="#history" data-i18n="nav.history">Past sessions</a>
       <a href="#gallery" data-i18n="nav.gallery">Gallery</a>
       <a href="#faq" data-i18n="nav.faq">FAQ</a>
       <a href="#contact" data-i18n="nav.contact">Contact</a>
     </nav>
     <div class="nav__actions">
+      <a class="btn btn--gold btn--sm" href="#register" data-i18n="nav.reg">Register</a>
       <button class="lang" id="langBtn" type="button" aria-label="Switch language">ΕΛ</button>
       <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
@@ -58,7 +58,7 @@
         <div><b id="cd-m">--</b><span data-i18n="cd.m">minutes</span></div>
       </div>
       <div class="hero__cta">
-        <a class="btn btn--gold" href="#join" data-i18n="hero.cta1">Bring your school</a>
+        <a class="btn btn--gold" href="#register" data-i18n="hero.cta1">Register your school</a>
         <a class="btn btn--ghost" href="#history" data-i18n="hero.cta2">See past sessions</a>
       </div>
     </div>
@@ -117,6 +117,25 @@
     </div>
   </section>
 
+  <!-- COMMITTEES -->
+  <section class="section wrap" id="committees">
+    <p class="eyebrow" data-i18n="com.eyebrow">Committees</p>
+    <h2 data-i18n="com.title">Seven committees, one Europe</h2>
+    <p class="lede" data-i18n="com.lede">Six committees work in English and one in French. Each is led by experienced chairs. Topics and study guides will appear here once they are announced.</p>
+    <div class="committees" id="committeesGrid"></div>
+  </section>
+
+  <!-- SCHEDULE -->
+  <section class="section section--tint" id="schedule">
+    <div class="wrap">
+      <p class="eyebrow" data-i18n="sch.eyebrow">Programme</p>
+      <h2 data-i18n="sch.title">Three days at KMEC</h2>
+      <p class="lede"><span class="badge" data-i18n="sch.badge">Provisional</span> <span data-i18n="sch.lede">The final timetable will be sent to participating schools before the conference.</span></p>
+      <div class="days" id="dayTabs" role="tablist"></div>
+      <ol class="agenda" id="agenda"></ol>
+    </div>
+  </section>
+
   <!-- GOALS -->
   <section class="section wrap" id="goals">
     <p class="eyebrow" data-i18n="goals.eyebrow">Why we do it</p>
@@ -160,9 +179,26 @@
         </div>
       </div>
       <div class="join__cta">
-        <p data-i18n="join.note">Interested in bringing your school to the 20th KMEC? Get in touch with the organising committee and we will send you the details.</p>
-        <a class="btn btn--gold" href="#contact" data-i18n="join.btn">Contact the organisers</a>
+        <p data-i18n="join.note">Interested in bringing your school to the 20th KMEC? Register below and the organising committee will be in touch.</p>
+        <a class="btn btn--gold" href="#register" data-i18n="join.btn">Register your school</a>
       </div>
+    </div>
+  </section>
+
+  <!-- REGISTER -->
+  <section class="section wrap" id="register">
+    <p class="eyebrow" data-i18n="reg.eyebrow">Registration</p>
+    <h2 data-i18n="reg.title">Register your school</h2>
+    <div class="register">
+      <div class="register__info">
+        <p data-i18n="reg.p1">One form per school, filled in by the accompanying teacher. Tell us how many students you would like to bring and which languages they prefer. We will confirm places by email.</p>
+        <ul class="checks">
+          <li data-i18n="reg.c1">Gymnasium and Lyceum students welcome</li>
+          <li data-i18n="reg.c2">No previous conference experience needed</li>
+          <li data-i18n="reg.c3">Schools outside Thessaloniki: ask us about travel support</li>
+        </ul>
+      </div>
+      <div class="register__form" id="registerBox"></div>
     </div>
   </section>
 
@@ -211,7 +247,7 @@
       <details><summary data-i18n="q3">Who can take part?</summary><p data-i18n="a3">Gymnasium and Lyceum students, from the Hellenic-French School of Kalamari and from any other school, in Central Macedonia or further afield.</p></details>
       <details><summary data-i18n="q4">What topics are discussed?</summary><p data-i18n="a4">Issues that matter for Europe: equality, and social, political, cultural and environmental questions, with emphasis on geopolitics, human rights and sustainable development. This year's committee topics will be announced here.</p></details>
       <details><summary data-i18n="q5">Our school is far from Thessaloniki. Can we still come?</summary><p data-i18n="a5">Yes, and we especially want you to. This year we aim to partly cover travel and accommodation for students from schools outside the city. Contact us to find out more.</p></details>
-      <details><summary data-i18n="q6">How does my school register?</summary><p data-i18n="a6">Email one of the organisers below. We will send you the details and the next steps.</p></details>
+      <details><summary data-i18n="q6">How does my school register?</summary><p data-i18n="a6">The accompanying teacher fills in the registration form above, once per school. We then confirm places and send the next steps by email.</p></details>
     </div>
   </section>
 

@@ -1,6 +1,6 @@
 // ---------- Data ----------
 // Conference start (Athens time, UTC+2 in November)
-const START = new Date("2026-11-20T09:00:00+02:00");
+const START = new Date("2026-11-20T15:00:00+02:00");
 
 // Past sessions, newest first. Source: kalamari.gr/kmec
 const SESSIONS = [
@@ -93,6 +93,50 @@ const GALLERY = [
   { n: 13, files: range("s13", [1, 4, 2, 5, 6]) },
 ];
 
+// ---------- Registration ----------
+// Paste the Google Form link here (the normal "viewform" link). Leave "" until it exists.
+const FORM_URL = "";
+const FALLBACK_EMAIL = "vkarfis1@gmail.com";
+
+// ---------- Committees ----------
+// Fill in name/topic/chairs when announced. guide = link to a study guide PDF (optional).
+// Leave a field as null to show "to be announced".
+const COMMITTEES = [
+  { lang: "EN", name: null, topic: null, chairs: null, guide: null },
+  { lang: "EN", name: null, topic: null, chairs: null, guide: null },
+  { lang: "EN", name: null, topic: null, chairs: null, guide: null },
+  { lang: "EN", name: null, topic: null, chairs: null, guide: null },
+  { lang: "EN", name: null, topic: null, chairs: null, guide: null },
+  { lang: "EN", name: null, topic: null, chairs: null, guide: null },
+  { lang: "FR", name: null, topic: null, chairs: null, guide: null },
+];
+
+// ---------- Schedule (provisional) ----------
+const t = (en, el) => ({ en, el });
+const SCHEDULE = [
+  { date: "2026-11-20", label: t("Fri 20 Nov", "Παρ 20 Νοε"), items: [
+    ["15:00", t("Arrival and registration", "Άφιξη και εγγραφές"), t("Pick up your badge and conference pack.", "Παραλαβή καρτελάκι και φακέλου συνεδρίου.")],
+    ["16:00", t("Opening ceremony", "Τελετή έναρξης"), t("Welcome speeches and guests in the main hall.", "Χαιρετισμοί και προσκεκλημένοι στην αίθουσα τελετών.")],
+    ["17:30", t("Ice-breakers", "Γνωριμία"), t("Meet your committee and your chairs.", "Γνωρίστε την επιτροπή και τους συντονιστές σας.")],
+    ["18:00", t("Committee session I", "1η συνεδρίαση επιτροπών"), t("Introducing the topic and first positions.", "Παρουσίαση του θέματος και πρώτες θέσεις.")],
+    ["20:00", t("End of day 1", "Λήξη 1ης ημέρας"), null],
+  ]},
+  { date: "2026-11-21", label: t("Sat 21 Nov", "Σάβ 21 Νοε"), items: [
+    ["09:00", t("Committee session II", "2η συνεδρίαση επιτροπών"), t("Debate and lobbying.", "Συζήτηση και διαπραγματεύσεις.")],
+    ["11:00", t("Break", "Διάλειμμα"), null],
+    ["11:30", t("Committee session III", "3η συνεδρίαση επιτροπών"), t("Drafting the committee's proposal.", "Σύνταξη της πρότασης της επιτροπής.")],
+    ["13:30", t("Lunch", "Γεύμα"), null],
+    ["14:30", t("Committee session IV", "4η συνεδρίαση επιτροπών"), t("Finalising and submitting proposals.", "Οριστικοποίηση και κατάθεση προτάσεων.")],
+    ["17:30", t("End of day 2", "Λήξη 2ης ημέρας"), null],
+  ]},
+  { date: "2026-11-22", label: t("Sun 22 Nov", "Κυρ 22 Νοε"), items: [
+    ["09:30", t("General Assembly I", "Γενική Συνέλευση Ι"), t("Committees present, debate and vote on proposals.", "Οι επιτροπές παρουσιάζουν, συζητούν και ψηφίζουν τις προτάσεις.")],
+    ["11:30", t("Break", "Διάλειμμα"), null],
+    ["12:00", t("General Assembly II", "Γενική Συνέλευση ΙΙ"), t("Final proposals and votes.", "Τελευταίες προτάσεις και ψηφοφορίες.")],
+    ["14:00", t("Closing ceremony", "Τελετή λήξης"), t("Thanks, certificates and photos.", "Ευχαριστίες, βεβαιώσεις και φωτογραφίες.")],
+  ]},
+];
+
 // ---------- Greek translations ----------
 const EL = {
   "nav.about": "Σχετικά", "nav.how": "Πώς λειτουργεί", "nav.goals": "Στόχοι", "nav.join": "Συμμετοχή",
@@ -104,7 +148,7 @@ const EL = {
   "hero.where": "Πού", "hero.place": "Ελληνογαλλική Σχολή Καλαμαρί, Θεσσαλονίκη",
   "hero.lang": "Γλώσσες", "hero.langs": "Αγγλικά &amp; Γαλλικά",
   "cd.d": "ημέρες", "cd.h": "ώρες", "cd.m": "λεπτά",
-  "hero.cta1": "Φέρε το σχολείο σου", "hero.cta2": "Δες τις προηγούμενες συνόδους",
+  "hero.cta1": "Δήλωσε συμμετοχή", "hero.cta2": "Δες τις προηγούμενες συνόδους",
   "stat.1": "σύνοδοι από το πρώτο KMEC", "stat.2": "μαθητές-σύνεδροι κάθε χρόνο",
   "stat.3": "επιτροπές: 6 αγγλόφωνες, 1 γαλλόφωνη", "stat.4": "ημέρες διαλόγου, με κατάληξη τη Γενική Συνέλευση",
   "about.eyebrow": "Σχετικά με το KMEC",
@@ -132,8 +176,8 @@ const EL = {
   "r1t": "Μαθητές", "r1": "Μαθητές Γυμνασίου και Λυκείου από κάθε σχολείο, με ή χωρίς εμπειρία σε συνέδρια. Έλα ως σύνεδρος και εκπροσώπησε την επιτροπή σου.",
   "r2t": "Σχολεία &amp; καθηγητές", "r2": "Φέρτε μια ομάδα από το σχολείο σας. Οι καθηγητές συνοδεύουν τους μαθητές τους και είναι ευπρόσδεκτοι σε όλη τη διάρκεια του συνεδρίου.",
   "r3t": "Έμπειροι μαθητές", "r3": "Μεγαλύτεροι μαθητές και απόφοιτοι στελεχώνουν το συνέδριο ως συντονιστές, μέλη του προεδρείου ή της δημοσιογραφικής ομάδας.",
-  "join.note": "Θέλετε να φέρετε το σχολείο σας στο 20ό KMEC; Επικοινωνήστε με την οργανωτική επιτροπή και θα σας στείλουμε όλες τις λεπτομέρειες.",
-  "join.btn": "Επικοινωνία με τους διοργανωτές",
+  "join.note": "Θέλετε να φέρετε το σχολείο σας στο 20ό KMEC; Δηλώστε συμμετοχή παρακάτω και η οργανωτική επιτροπή θα επικοινωνήσει μαζί σας.",
+  "join.btn": "Δηλώστε συμμετοχή",
   "hist.eyebrow": "Η ιστορία μας", "hist.title": "19 σύνοδοι, και συνεχίζουμε",
   "hist.lede": "Το KMEC ξεκίνησε ως πρωτοβουλία μαθητών του Λυκείου, σε συνεργασία με αποφοίτους, για να εξοικειωθούν οι νεότεροι μαθητές με τα αγγλόφωνα μαθητικά συνέδρια. Με τα χρόνια έγινε ένα περιφερειακό συνέδριο, με φιλοξενούμενα σχολεία από τη Θεσσαλονίκη, το Σουφλί και την Αλεξανδρούπολη, και την επίσημη υποστήριξη του Γραφείου του Ευρωπαϊκού Κοινοβουλίου στην Ελλάδα.",
   "hist.src": "Όλο το αρχείο στην ιστοσελίδα της Σχολής:",
@@ -148,7 +192,7 @@ const EL = {
   "q3": "Ποιοι μπορούν να συμμετάσχουν;", "a3": "Μαθητές Γυμνασίου και Λυκείου, από την Ελληνογαλλική Σχολή Καλαμαρί και από κάθε άλλο σχολείο, εντός ή εκτός Κεντρικής Μακεδονίας.",
   "q4": "Ποια θέματα συζητιούνται;", "a4": "Ζητήματα που αφορούν την Ευρώπη: ισότητα, κοινωνικά, πολιτικά, πολιτιστικά και περιβαλλοντικά θέματα, με έμφαση στη γεωπολιτική, τα ανθρώπινα δικαιώματα και την αειφόρο ανάπτυξη. Τα φετινά θέματα των επιτροπών θα ανακοινωθούν εδώ.",
   "q5": "Το σχολείο μας είναι μακριά από τη Θεσσαλονίκη. Μπορούμε να έρθουμε;", "a5": "Ναι, και το θέλουμε ιδιαίτερα. Φέτος στοχεύουμε στη μερική κάλυψη των εξόδων μετακίνησης και διαμονής για μαθητές σχολείων εκτός πόλης. Επικοινωνήστε μαζί μας για περισσότερα.",
-  "q6": "Πώς δηλώνει συμμετοχή το σχολείο μου;", "a6": "Στείλτε email σε κάποιον από τους διοργανωτές παρακάτω. Θα σας στείλουμε τις λεπτομέρειες και τα επόμενα βήματα.",
+  "q6": "Πώς δηλώνει συμμετοχή το σχολείο μου;", "a6": "Ο συνοδός καθηγητής συμπληρώνει τη φόρμα εγγραφής παραπάνω, μία φορά ανά σχολείο. Στη συνέχεια επιβεβαιώνουμε τις θέσεις και στέλνουμε τα επόμενα βήματα με email.",
   "ct.eyebrow": "Επικοινωνία", "ct.title": "Η οργανωτική επιτροπή",
   "ct.lede": "Ερωτήσεις, δηλώσεις συμμετοχής ή ιδέες συνεργασίας; Γράψτε σε οποιονδήποτε από εμάς.",
   "p1": "Βασίλειος Καρφής", "p2": "Χρήστος Κουνάδης", "p3": "Δήμητρα Παπαδοπούλου", "p4": "Βασίλειος Παπαζάχος",
@@ -156,11 +200,24 @@ const EL = {
   "sup1": "Ελληνογαλλική Σχολή Καλαμαρί", "sup2": "Σύλλογος Αποφοίτων Σχολής Καλαμαρί",
   "sup3": "Γραφείο του Ευρωπαϊκού Κοινοβουλίου στην Ελλάδα (προηγούμενες σύνοδοι)",
   "ft.date": "20–22 Νοεμβρίου 2026", "ft.top": "Επιστροφή στην κορυφή ↑",
+  "nav.com": "Επιτροπές", "nav.sch": "Πρόγραμμα", "nav.reg": "Εγγραφή",
+  "com.eyebrow": "Επιτροπές", "com.title": "Επτά επιτροπές, μία Ευρώπη",
+  "com.lede": "Έξι επιτροπές λειτουργούν στα αγγλικά και μία στα γαλλικά, με έμπειρους συντονιστές. Τα θέματα και οι οδηγοί μελέτης θα εμφανιστούν εδώ μόλις ανακοινωθούν.",
+  "sch.eyebrow": "Πρόγραμμα", "sch.title": "Τρεις μέρες στο KMEC", "sch.badge": "Προσωρινό",
+  "sch.lede": "Το τελικό πρόγραμμα θα σταλεί στα σχολεία που συμμετέχουν πριν από το συνέδριο.",
+  "reg.eyebrow": "Εγγραφές", "reg.title": "Δηλώστε συμμετοχή για το σχολείο σας",
+  "reg.p1": "Μία φόρμα ανά σχολείο, από τον συνοδό καθηγητή. Πείτε μας πόσους μαθητές θέλετε να φέρετε και ποιες γλώσσες προτιμούν. Θα επιβεβαιώσουμε τις θέσεις με email.",
+  "reg.c1": "Ευπρόσδεκτοι μαθητές Γυμνασίου και Λυκείου", "reg.c2": "Δεν απαιτείται προηγούμενη εμπειρία",
+  "reg.c3": "Σχολεία εκτός Θεσσαλονίκης: ρωτήστε μας για στήριξη στη μετακίνηση",
 };
 
 const UI = {
-  en: { all: "All", session: (n) => `${n}th`, video: (n) => `${n}th session`, more: "Show earlier sessions", less: "Show fewer", started: "KMEC 2026 is happening now!", photo: (n) => `${n}th session` },
-  el: { all: "Όλες", session: (n) => `${n}η`, video: (n) => `${n}η Σύνοδος`, more: "Προηγούμενες σύνοδοι", less: "Λιγότερες", started: "Το KMEC 2026 είναι σε εξέλιξη!", photo: (n) => `${n}η Σύνοδος` },
+  en: { tba: "To be announced", topic: "Topic", chairs: "Chairs", guide: "Study guide ↗", comEN: "English", comFR: "French", comName: (i) => `Committee ${i}`, comFRName: "Comité francophone",
+    regSoon: "The registration form opens soon", regSoonP: "Until it does, schools can register their interest by email. We will reply with the details.", regMail: "Email the organisers", regOpen: "Open the form in a new tab ↗", regSubject: "KMEC 2026 – School registration",
+    all: "All", session: (n) => `${n}th`, video: (n) => `${n}th session`, more: "Show earlier sessions", less: "Show fewer", started: "KMEC 2026 is happening now!", photo: (n) => `${n}th session` },
+  el: { tba: "Θα ανακοινωθεί", topic: "Θέμα", chairs: "Συντονιστές", guide: "Οδηγός μελέτης ↗", comEN: "Αγγλικά", comFR: "Γαλλικά", comName: (i) => `Επιτροπή ${i}`, comFRName: "Comité francophone",
+    regSoon: "Η φόρμα εγγραφής ανοίγει σύντομα", regSoonP: "Μέχρι τότε, τα σχολεία μπορούν να δηλώσουν ενδιαφέρον με email. Θα σας απαντήσουμε με όλες τις λεπτομέρειες.", regMail: "Email στους διοργανωτές", regOpen: "Άνοιγμα της φόρμας σε νέα καρτέλα ↗", regSubject: "KMEC 2026 – Δήλωση συμμετοχής σχολείου",
+    all: "Όλες", session: (n) => `${n}η`, video: (n) => `${n}η Σύνοδος`, more: "Προηγούμενες σύνοδοι", less: "Λιγότερες", started: "Το KMEC 2026 είναι σε εξέλιξη!", photo: (n) => `${n}η Σύνοδος` },
 };
 
 // ---------- Language ----------
@@ -180,6 +237,9 @@ function setLang(l) {
   try { localStorage.setItem("kmec-lang", l); } catch (e) {}
   renderTimeline();
   renderVideos();
+  renderCommittees();
+  renderSchedule();
+  renderRegister();
   renderFilters();
   renderGallery();
 }
@@ -318,11 +378,68 @@ document.addEventListener("keydown", (e) => {
   if (e.key === "ArrowRight") openLb(cur + 1);
 });
 
+// ---------- Committees ----------
+function renderCommittees() {
+  const u = UI[lang];
+  let enCount = 0;
+  document.getElementById("committeesGrid").innerHTML = COMMITTEES.map((c) => {
+    const fr = c.lang === "FR";
+    const name = c.name || (fr ? u.comFRName : u.comName(++enCount));
+    const tba = `<span class="tba">${u.tba}</span>`;
+    return `
+    <article class="committee${fr ? " committee--fr" : ""}">
+      <span class="committee__lang">${fr ? "FR · " + u.comFR : "EN · " + u.comEN}</span>
+      <h3>${name}</h3>
+      <dl>
+        <dt>${u.topic}</dt><dd>${c.topic || tba}</dd>
+        <dt>${u.chairs}</dt><dd>${c.chairs || tba}</dd>
+      </dl>
+      ${c.guide ? `<a class="committee__guide" href="${c.guide}" target="_blank" rel="noopener">${u.guide}</a>` : ""}
+    </article>`;
+  }).join("");
+}
+
+// ---------- Schedule ----------
+let dayIdx = Math.max(0, SCHEDULE.findIndex((d) => d.date === new Date().toISOString().slice(0, 10)));
+function renderSchedule() {
+  document.getElementById("dayTabs").innerHTML = SCHEDULE.map((d, i) =>
+    `<button type="button" role="tab" data-day="${i}" aria-selected="${i === dayIdx}"><b>${lang === "el" ? "Ημέρα" : "Day"} ${i + 1}</b><span>${d.label[lang]}</span></button>`).join("");
+  document.getElementById("agenda").innerHTML = SCHEDULE[dayIdx].items.map(([time, title, desc]) => `
+    <li><time>${time}</time><div><h3>${title[lang]}</h3>${desc ? `<p>${desc[lang]}</p>` : ""}</div></li>`).join("");
+}
+document.getElementById("dayTabs").addEventListener("click", (e) => {
+  const b = e.target.closest("button[data-day]");
+  if (!b) return;
+  dayIdx = Number(b.dataset.day);
+  renderSchedule();
+});
+
+// ---------- Registration ----------
+function renderRegister() {
+  const u = UI[lang], box = document.getElementById("registerBox");
+  if (FORM_URL) {
+    const src = FORM_URL + (FORM_URL.includes("?") ? "&" : "?") + "embedded=true";
+    if (!box.querySelector("iframe")) {
+      box.innerHTML = `<iframe src="${src}" title="KMEC registration form" loading="lazy">…</iframe><a class="register__open" href="${FORM_URL}" target="_blank" rel="noopener"></a>`;
+    }
+    box.querySelector(".register__open").textContent = u.regOpen;
+  } else {
+    const mail = `mailto:${FALLBACK_EMAIL}?subject=${encodeURIComponent(u.regSubject)}`;
+    box.innerHTML = `
+      <div class="register__soon">
+        <div class="register__icon">📝</div>
+        <h3>${u.regSoon}</h3>
+        <p>${u.regSoonP}</p>
+        <a class="btn btn--gold" href="${mail}">${u.regMail}</a>
+      </div>`;
+  }
+}
+
 // ---------- Reveal on scroll ----------
 const io = "IntersectionObserver" in window ? new IntersectionObserver((entries) => {
   entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } });
 }, { threshold: 0.12 }) : null;
-document.querySelectorAll(".section h2, .card, .steps li, .role, .person, .photo-stack, .new-goals").forEach((el) => {
+document.querySelectorAll(".section h2, .card, .steps li, .role, .person, .photo-stack, .new-goals, .committee, .register").forEach((el) => {
   if (io) { el.classList.add("reveal"); io.observe(el); }
 });
 
