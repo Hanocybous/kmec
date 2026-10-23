@@ -8,3 +8,7 @@ Static site (HTML/CSS/JS, no build step), English and Greek. Hosted on GitHub Pa
 - `assets/main.js` – Greek translations, past sessions, videos, gallery list
 - `assets/styles.css` – design
 - `assets/img/` – photos from past sessions (source: kalamari.gr)
+
+## Updating
+
+When you change `assets/styles.css` or `assets/main.js`, bump the `?v=` number on their links in `index.html`, so visitors' browsers fetch the new version instead of a cached copy.
