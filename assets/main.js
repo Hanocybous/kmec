@@ -100,16 +100,46 @@ const FALLBACK_EMAIL = "vkarfis1@gmail.com";
 
 // ---------- Committees ----------
 const t = (en, el) => ({ en, el });
-// Fill in name/topic/chairs when announced. guide = link to a study guide PDF (optional).
-// Leave a field as null to show "to be announced".
+// title = topic title (shown in the site's language), text = topic description in the
+// committee's working language, level = difficulty stars (1–5).
+// chairs / guide (study guide PDF link) can be added later; null shows "to be announced" / nothing.
 const COMMITTEES = [
-  { lang: "EN", code: "AFET", name: t("Foreign Affairs", "Εξωτερικών Υποθέσεων"), topic: null, chairs: null, guide: null },
-  { lang: "EN", code: "DROI", name: t("Human Rights", "Ανθρωπίνων Δικαιωμάτων"), topic: null, chairs: null, guide: null },
-  { lang: "EN", code: "ENV", name: t("Environment", "Περιβάλλοντος"), topic: null, chairs: null, guide: null },
-  { lang: "EN", code: "FEMM", name: t("Women's Rights & Gender Equality", "Δικαιωμάτων των Γυναικών & Ισότητας των Φύλων"), topic: null, chairs: null, guide: null },
-  { lang: "EN", code: "IMCO", name: t("Internal Market & Consumer Protection", "Εσωτερικής Αγοράς & Προστασίας των Καταναλωτών"), topic: null, chairs: null, guide: null },
-  { lang: "EN", code: "INTA", name: t("International Trade", "Διεθνούς Εμπορίου"), topic: null, chairs: null, guide: null },
-  { lang: "FR", name: null, topic: null, chairs: null, guide: null },
+  { lang: "EN", code: "INTA", level: 5,
+    name: t("Committee on International Trade", "Επιτροπή Διεθνούς Εμπορίου"),
+    title: t("US-Iran war and the Oil Crisis", "Ο πόλεμος ΗΠΑ-Ιράν και η πετρελαϊκή κρίση"),
+    text: "Since the 28th of February 2026, the United States of America and Israel have been at war with Iran and its regional allies. Iran borders the Strait of Hormuz, a vital waterway for oil exports from the Persian Gulf to the rest of the world. The Iranian Revolutionary Guard Corps (IRGC) issued warnings forbidding passage through the strait, boarded and attacked merchant ships and laid sea mines in the strait, causing the oil exports to drop to near zero levels and the prices worldwide to skyrocket. How can the European Union protect its energy security and economic stability in the face of global trade disruptions such as this?",
+    chairs: null, guide: null },
+  { lang: "EN", code: "AFET", level: 4,
+    name: t("Committee on Foreign Affairs", "Επιτροπή Εξωτερικών Υποθέσεων"),
+    title: t("EU Enlargement", "Η διεύρυνση της ΕΕ"),
+    text: "The European Union is on the precipice of one of its largest enlargements. 9 countries (Albania, Bosnia, Montenegro, North Macedonia, Serbia, Georgia, Moldova, Ukraine and Turkey) have been granted candidate status, with Canada having been invited to serve as an “associate member” and even the UK rejoining the bloc is now on the table. How can the EU treat these negotiations to ensure its sociopolitical and economic benefits, is this enlargement going to strengthen the EU or spark a major debate about whether the bloc can manage growth without breaking its internal stability?",
+    chairs: null, guide: null },
+  { lang: "EN", code: "DROI", level: 3,
+    name: t("Subcommittee on Human Rights", "Υποεπιτροπή Ανθρωπίνων Δικαιωμάτων"),
+    title: t("Immigration", "Μετανάστευση"),
+    text: "In August of 2026, an unprecedented 72,000 migrants from Morocco flooded the Spanish city of Ceuta in just 24 hours, creating concerns about the EU’s massive illegal immigration problem. Many also voiced fear of Islamic terrorism. In what ways can the EU tackle the never-ending waves of immigrants reaching its shores while also dealing with the problem's true causes such as war, famine and exploitation from “First-World” countries?",
+    chairs: null, guide: null },
+  { lang: "EN", code: "ENVI", level: 2,
+    name: t("Committee on Environment, Climate and Food Safety", "Επιτροπή Περιβάλλοντος, Κλίματος και Ασφάλειας Τροφίμων"),
+    title: t("AI and its Impact on the Environment", "Η τεχνητή νοημοσύνη και ο αντίκτυπός της στο περιβάλλον"),
+    text: "According to the United Nations, by the end of the decade, Generative AI data centres would consume 945 terawatt-hours of electricity, which is almost triple the combined annual electricity use of Pakistan, Bangladesh, and Nigeria, as well as water equal to the basic annual domestic needs of 1.3 billion people. The stats reveal that GenAI’s greenhouse gas emissions are intense and heavily impact the environment (i.e. rising temperatures). What action can the EU take moving forward to regulate the use of GenAI while also pressuring the main actors of the space to turn to more environmentally friendly ways of running their data centres?",
+    chairs: null, guide: null },
+  { lang: "EN", code: "IMCO", level: 2,
+    name: t("Committee on Internal Market and Consumer Protection", "Επιτροπή Εσωτερικής Αγοράς και Προστασίας των Καταναλωτών"),
+    title: t("Subscription Based Economy", "Η οικονομία των συνδρομών"),
+    text: "The subscription-based model started with on-demand video and music platforms giving people access to huge libraries of content for a fair price. Once-convenient, now it has permeated to every part of daily life. A subscription is needed now for computer software or storage space to even services in a car that someone has already bought. The sense that genuine ownership is becoming obsolete is vivid amongst the general public. Could an EU-wide programme be implemented to safeguard consumer’s interests and limit the ever-rising costs of the subscription-based model?",
+    chairs: null, guide: null },
+  { lang: "EN", code: "FEMM", level: 1,
+    name: t("Committee on Women’s Rights and Gender Equality", "Επιτροπή Δικαιωμάτων των Γυναικών και Ισότητας των Φύλων"),
+    title: t("Wage Gap", "Το μισθολογικό χάσμα"),
+    text: "According to the estimates released on September 18th, 2026 by the International Labour Organization (ILO), the gap between the earnings of women and men has narrowed by just 2% since the last release in 2018. These findings blatantly reveal that progress towards closing the gender pay gap has been slow, which assuredly underlines the necessity for gender equality in the workforce. Globally women still earn, on average, around 18% less than men, hence millions of women’s work across diverse sectors and occupations continues to be too often undervalued. What measures can the EU take to ensure equal pay for equal work for all women?",
+    chairs: null, guide: null },
+  { lang: "FR", code: "CULT", level: 2,
+    name: t("Commission de la culture et de l'éducation", "Commission de la culture et de l'éducation"),
+    title: t("La crise de l'éducation aux médias", "La crise de l'éducation aux médias"),
+    subtitle: t("The media literacy crisis", "Η κρίση του γραμματισμού στα μέσα ενημέρωσης"),
+    text: "L'essor des plateformes de réseaux sociaux et de l'IA générative permet la diffusion rapide de la désinformation auprès d'un public mondial. Cet essor, conjugué à l'influence des algorithmes et au manque d'esprit critique, révèle que l'éducation aux médias est en crise. Les publics plus jeunes formulent leurs opinions sur les questions politiques et sociales uniquement sur des plateformes comme TikTok, où la vérité est facilement déformée. Le paysage numérique a rendu l'information et la vérité relatives, augmentant ainsi la méfiance du public et la polarisation de la société. Comment l'UE peut-elle agir afin de favoriser une culture de l'éducation aux médias et sauvegarder l'intégrité de nos démocraties?",
+    chairs: null, guide: null },
 ];
 
 // ---------- Schedule (provisional) ----------
@@ -190,7 +220,7 @@ const EL = {
   "q1": "Χρειάζομαι προηγούμενη εμπειρία σε συνέδρια;", "a1": "Όχι. Το KMEC είναι σχεδιασμένο ως πρώτη συνεδριακή εμπειρία. Μεγαλύτεροι μαθητές και απόφοιτοι συντονίζουν τις επιτροπές και καθοδηγούν τους νέους συνέδρους.",
   "q2": "Σε ποια γλώσσα γίνεται το συνέδριο;", "a2": "Κυρίως στα αγγλικά. Υπάρχουν έξι αγγλόφωνες επιτροπές και μία γαλλόφωνη.",
   "q3": "Ποιοι μπορούν να συμμετάσχουν;", "a3": "Μαθητές Γυμνασίου και Λυκείου, από την Ελληνογαλλική Σχολή Καλαμαρί και από κάθε άλλο σχολείο, εντός ή εκτός Κεντρικής Μακεδονίας.",
-  "q4": "Ποια θέματα συζητιούνται;", "a4": "Ζητήματα που αφορούν την Ευρώπη: ισότητα, κοινωνικά, πολιτικά, πολιτιστικά και περιβαλλοντικά θέματα, με έμφαση στη γεωπολιτική, τα ανθρώπινα δικαιώματα και την αειφόρο ανάπτυξη. Τα φετινά θέματα των επιτροπών θα ανακοινωθούν εδώ.",
+  "q4": "Ποια θέματα συζητιούνται;", "a4": "Ζητήματα που αφορούν την Ευρώπη: ισότητα, κοινωνικά, πολιτικά, πολιτιστικά και περιβαλλοντικά θέματα, με έμφαση στη γεωπολιτική, τα ανθρώπινα δικαιώματα και την αειφόρο ανάπτυξη. Δες τα επτά φετινά θέματα στην ενότητα <a href=\"#committees\">Επιτροπές</a>.",
   "q5": "Το σχολείο μας είναι μακριά από τη Θεσσαλονίκη. Μπορούμε να έρθουμε;", "a5": "Ναι, και το θέλουμε ιδιαίτερα. Φέτος στοχεύουμε στη μερική κάλυψη των εξόδων μετακίνησης και διαμονής για μαθητές σχολείων εκτός πόλης. Επικοινωνήστε μαζί μας για περισσότερα.",
   "q6": "Πώς δηλώνει συμμετοχή το σχολείο μου;", "a6": "Ο συνοδός καθηγητής συμπληρώνει τη φόρμα εγγραφής παραπάνω, μία φορά ανά σχολείο. Στη συνέχεια επιβεβαιώνουμε τις θέσεις και στέλνουμε τα επόμενα βήματα με email.",
   "ct.eyebrow": "Επικοινωνία", "ct.title": "Η οργανωτική επιτροπή",
@@ -202,7 +232,7 @@ const EL = {
   "ft.date": "20–22 Νοεμβρίου 2026", "ft.top": "Επιστροφή στην κορυφή ↑",
   "nav.com": "Επιτροπές", "nav.sch": "Πρόγραμμα", "nav.reg": "Εγγραφή",
   "com.eyebrow": "Επιτροπές", "com.title": "Επτά επιτροπές, μία Ευρώπη",
-  "com.lede": "Έξι επιτροπές λειτουργούν στα αγγλικά και μία στα γαλλικά, με έμπειρους συντονιστές. Τα θέματα και οι οδηγοί μελέτης θα εμφανιστούν εδώ μόλις ανακοινωθούν.",
+  "com.lede": "Έξι επιτροπές λειτουργούν στα αγγλικά και μία στα γαλλικά, με έμπειρους συντονιστές. Τα αστέρια δείχνουν τη δυσκολία κάθε θέματος, ώστε να επιλέξεις αυτό που σου ταιριάζει.",
   "sch.eyebrow": "Πρόγραμμα", "sch.title": "Τρεις μέρες στο KMEC", "sch.badge": "Προσωρινό",
   "sch.lede": "Το τελικό πρόγραμμα θα σταλεί στα σχολεία που συμμετέχουν πριν από το συνέδριο.",
   "reg.eyebrow": "Εγγραφές", "reg.title": "Δηλώστε συμμετοχή για το σχολείο σας",
@@ -212,10 +242,10 @@ const EL = {
 };
 
 const UI = {
-  en: { tba: "To be announced", topic: "Topic", chairs: "Chairs", guide: "Study guide ↗", comEN: "English", comFR: "French", comName: (i) => `Committee ${i}`, comFRName: "Comité francophone",
+  en: { tba: "To be announced", topic: "Topic", chairs: "Chairs", guide: "Study guide ↗", comEN: "English", comFR: "French", level: "Difficulty", readTopic: "Read the topic",
     regSoon: "The registration form opens soon", regSoonP: "Until it does, schools can register their interest by email. We will reply with the details.", regMail: "Email the organisers", regOpen: "Open the form in a new tab ↗", regSubject: "KMEC 2026 – School registration",
     all: "All", session: (n) => `${n}th`, video: (n) => `${n}th session`, more: "Show earlier sessions", less: "Show fewer", started: "KMEC 2026 is happening now!", photo: (n) => `${n}th session` },
-  el: { tba: "Θα ανακοινωθεί", topic: "Θέμα", chairs: "Συντονιστές", guide: "Οδηγός μελέτης ↗", comEN: "Αγγλικά", comFR: "Γαλλικά", comName: (i) => `Επιτροπή ${i}`, comFRName: "Comité francophone",
+  el: { tba: "Θα ανακοινωθεί", topic: "Θέμα", chairs: "Συντονιστές", guide: "Οδηγός μελέτης ↗", comEN: "Αγγλικά", comFR: "Γαλλικά", level: "Δυσκολία", readTopic: "Διάβασε το θέμα",
     regSoon: "Η φόρμα εγγραφής ανοίγει σύντομα", regSoonP: "Μέχρι τότε, τα σχολεία μπορούν να δηλώσουν ενδιαφέρον με email. Θα σας απαντήσουμε με όλες τις λεπτομέρειες.", regMail: "Email στους διοργανωτές", regOpen: "Άνοιγμα της φόρμας σε νέα καρτέλα ↗", regSubject: "KMEC 2026 – Δήλωση συμμετοχής σχολείου",
     all: "Όλες", session: (n) => `${n}η`, video: (n) => `${n}η Σύνοδος`, more: "Προηγούμενες σύνοδοι", less: "Λιγότερες", started: "Το KMEC 2026 είναι σε εξέλιξη!", photo: (n) => `${n}η Σύνοδος` },
 };
@@ -381,20 +411,24 @@ document.addEventListener("keydown", (e) => {
 // ---------- Committees ----------
 function renderCommittees() {
   const u = UI[lang];
-  let enCount = 0;
   document.getElementById("committeesGrid").innerHTML = COMMITTEES.map((c) => {
     const fr = c.lang === "FR";
-    const name = c.name ? c.name[lang] : (fr ? u.comFRName : u.comName(++enCount));
-    const tba = `<span class="tba">${u.tba}</span>`;
+    const stars = "★".repeat(c.level) + `<span class="off">${"★".repeat(5 - c.level)}</span>`;
     return `
     <article class="committee${fr ? " committee--fr" : ""}">
-      <span class="committee__lang">${fr ? "FR · " + u.comFR : "EN · " + u.comEN}</span>
-      ${c.code ? `<b class="committee__code">${c.code}</b>` : ""}
-      <h3>${name}</h3>
-      <dl>
-        <dt>${u.topic}</dt><dd>${c.topic || tba}</dd>
-        <dt>${u.chairs}</dt><dd>${c.chairs || tba}</dd>
-      </dl>
+      <div class="committee__top">
+        <span class="committee__lang">${fr ? "FR · " + u.comFR : "EN · " + u.comEN}</span>
+        <span class="stars" title="${u.level}: ${c.level}/5" aria-label="${u.level}: ${c.level}/5">${stars}</span>
+      </div>
+      <b class="committee__code">${c.code}</b>
+      <p class="committee__name">${c.name[lang]}</p>
+      <h3 class="committee__topic">${c.title[lang]}</h3>
+      ${c.subtitle ? `<p class="committee__sub">${c.subtitle[lang]}</p>` : ""}
+      <details class="committee__more">
+        <summary>${u.readTopic}</summary>
+        <p lang="${fr ? "fr" : "en"}">${c.text}</p>
+      </details>
+      <p class="committee__chairs"><span>${u.chairs}:</span> ${c.chairs || `<span class="tba">${u.tba}</span>`}</p>
       ${c.guide ? `<a class="committee__guide" href="${c.guide}" target="_blank" rel="noopener">${u.guide}</a>` : ""}
     </article>`;
   }).join("");
