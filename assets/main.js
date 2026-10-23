@@ -202,7 +202,7 @@ const SCHEDULE = [
 // ---------- Greek translations ----------
 const EL = {
   "nav.about": "Σχετικά", "nav.how": "Πώς λειτουργεί", "nav.goals": "Στόχοι", "nav.join": "Συμμετοχή",
-  "nav.history": "Προηγούμενες σύνοδοι", "nav.gallery": "Φωτογραφίες", "nav.faq": "Συχνές ερωτήσεις", "nav.contact": "Επικοινωνία",
+  "nav.history": "Ιστορικό", "nav.gallery": "Φωτογραφίες", "nav.faq": "Ερωτήσεις", "nav.contact": "Επικοινωνία",
   "hero.eyebrow": "20ή Σύνοδος · Επετειακή διοργάνωση",
   "hero.title": "Kalamari Model European Conference",
   "hero.lead": "Μπες στο Ευρωπαϊκό Κοινοβούλιο. Συζήτησε τα θέματα που διαμορφώνουν την Ευρώπη, γράψε πραγματικές προτάσεις και ψήφισέ τες, μαζί με περίπου 170 μαθητές από όλη την Ελλάδα.",
@@ -266,6 +266,14 @@ const EL = {
   "res.eyebrow": "Υλικό", "res.title": "Προετοιμασία για το KMEC",
   "res.lede": "Οδηγοί για να προετοιμαστείς, είτε είναι το πρώτο σου συνέδριο είτε συντονίζεις επιτροπή. Όλα τα αρχεία είναι PDF που ανοίγουν στον browser ή κατεβαίνουν.",
   "res.del": "Για συνέδρους", "res.chair": "Για συντονιστές",
+  "nav.venue": "Τοποθεσία",
+  "pos.title": "Διαδώστε το στο σχολείο σας", "pos.p": "Εκτυπώστε την αφίσα Α4 για τον πίνακα ανακοινώσεων ή μοιραστείτε τη με τους μαθητές. Ο κωδικός QR οδηγεί κατευθείαν σε αυτή την ιστοσελίδα.",
+  "pos.en": "Αφίσα στα αγγλικά (PDF)", "pos.el": "Αφίσα στα ελληνικά (PDF)",
+  "ven.eyebrow": "Τοποθεσία", "ven.title": "Πώς θα έρθετε στο KMEC", "ven.name": "Ελληνογαλλική Σχολή Καλαμαρί",
+  "ven.addr": "Λεωφ. Γεωργικής Σχολής 44<br>555 35 Πυλαία, Θεσσαλονίκη", "ven.gmaps": "Οδηγίες (Google Maps)", "ven.amaps": "Apple Maps",
+  "ven.n1": "<strong>Έρχεστε από εκτός Θεσσαλονίκης;</strong> Στείλτε email στους διοργανωτές πριν ταξιδέψετε και θα σας στείλουμε οδηγίες άφιξης για την ομάδα σας.",
+  "ven.n2": "<strong>Χρειάζεστε στήριξη μετακίνησης;</strong> Επιλέξτε «Ναι» στη φόρμα εγγραφής και θα επικοινωνήσουμε μαζί σας.",
+  "ven.n3": "<strong>Προσθέστε τις ημερομηνίες στο ημερολόγιό σας</strong> ώστε να μην τις χάσει η ομάδα σας.",
   "res.credit": "Οι οδηγοί με την ένδειξη «European Youth Parliament» είναι υλικό του <a href=\"https://eyp.org\" target=\"_blank\" rel=\"noopener\">Ευρωπαϊκού Κοινοβουλίου Νέων (EYP)</a> και κοινοποιούνται εδώ για εκπαιδευτικούς σκοπούς. Όλα τα δικαιώματα ανήκουν στο EYP.", "nav.sch": "Πρόγραμμα", "nav.reg": "Εγγραφή",
   "com.eyebrow": "Επιτροπές", "com.title": "Επτά επιτροπές, μία Ευρώπη",
   "com.lede": "Έξι επιτροπές λειτουργούν στα αγγλικά και μία στα γαλλικά, με έμπειρους συντονιστές. Τα αστέρια δείχνουν τη δυσκολία κάθε θέματος, ώστε να επιλέξεις αυτό που σου ταιριάζει.",
@@ -278,10 +286,10 @@ const EL = {
 };
 
 const UI = {
-  en: { tba: "To be announced", topic: "Topic", chairs: "Chairs", guide: "Study guide ↗", comEN: "English", comFR: "French", pages: "pages", level: "Difficulty", readTopic: "Read the topic",
+  en: { tba: "To be announced", topic: "Topic", chairs: "Chairs", guide: "Study guide ↗", comEN: "English", comFR: "French", pages: "pages", calAdd: "Add to calendar", calApple: "Apple Calendar (iPhone, Mac)", calIcs: "Other calendar (.ics file)", level: "Difficulty", readTopic: "Read the topic",
     regSoon: "The registration form opens soon", regSoonP: "Until it does, schools can register their interest by email. We will reply with the details.", regMail: "Email the organisers", regOpen: "Open the form in a new tab ↗", regSubject: "KMEC 2026 – School registration",
     all: "All", session: (n) => `${n}th`, video: (n) => `${n}th session`, more: "Show earlier sessions", less: "Show fewer", started: "KMEC 2026 is happening now!", photo: (n) => `${n}th session` },
-  el: { tba: "Θα ανακοινωθεί", topic: "Θέμα", chairs: "Συντονιστές", guide: "Οδηγός μελέτης ↗", comEN: "Αγγλικά", comFR: "Γαλλικά", pages: "σελίδες", level: "Δυσκολία", readTopic: "Διάβασε το θέμα",
+  el: { tba: "Θα ανακοινωθεί", topic: "Θέμα", chairs: "Συντονιστές", guide: "Οδηγός μελέτης ↗", comEN: "Αγγλικά", comFR: "Γαλλικά", pages: "σελίδες", calAdd: "Προσθήκη στο ημερολόγιο", calApple: "Apple Calendar (iPhone, Mac)", calIcs: "Άλλο ημερολόγιο (αρχείο .ics)", level: "Δυσκολία", readTopic: "Διάβασε το θέμα",
     regSoon: "Η φόρμα εγγραφής ανοίγει σύντομα", regSoonP: "Μέχρι τότε, τα σχολεία μπορούν να δηλώσουν ενδιαφέρον με email. Θα σας απαντήσουμε με όλες τις λεπτομέρειες.", regMail: "Email στους διοργανωτές", regOpen: "Άνοιγμα της φόρμας σε νέα καρτέλα ↗", regSubject: "KMEC 2026 – Δήλωση συμμετοχής σχολείου",
     all: "Όλες", session: (n) => `${n}η`, video: (n) => `${n}η Σύνοδος`, more: "Προηγούμενες σύνοδοι", less: "Λιγότερες", started: "Το KMEC 2026 είναι σε εξέλιξη!", photo: (n) => `${n}η Σύνοδος` },
 };
@@ -304,6 +312,7 @@ function setLang(l) {
   renderTimeline();
   renderVideos();
   renderCommittees();
+  renderCalendar();
   renderResources();
   renderSchedule();
   renderRegister();
@@ -499,6 +508,34 @@ function renderResources() {
   document.getElementById("resDelegates").innerHTML = RESOURCES.delegates.map(item).join("");
   document.getElementById("resChairs").innerHTML = RESOURCES.chairs.map(item).join("");
 }
+
+// ---------- Add to calendar ----------
+const CAL = {
+  title: "KMEC 2026 – 20th Kalamari Model European Conference",
+  details: "20th Kalamari Model European Conference, a student simulation of the European Parliament. https://hanocybous.github.io/kmec/",
+  location: "Hellenic-French School of Kalamari, Georgikis Scholis Avenue 44, 555 35 Pylaia, Thessaloniki, Greece",
+};
+function renderCalendar() {
+  const u = UI[lang], e = encodeURIComponent;
+  const google = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${e(CAL.title)}&dates=20261120/20261123&details=${e(CAL.details)}&location=${e(CAL.location)}`;
+  const outlook = `https://outlook.live.com/calendar/0/action/compose?subject=${e(CAL.title)}&startdt=2026-11-20&enddt=2026-11-23&allday=true&body=${e(CAL.details)}&location=${e(CAL.location)}`;
+  document.querySelectorAll(".cal-slot").forEach((slot) => {
+    const light = slot.classList.contains("cal-slot--light");
+    slot.innerHTML = `
+      <details class="cal">
+        <summary class="btn ${light ? "btn--line" : "btn--ghost"}">📅 ${u.calAdd}</summary>
+        <div class="cal__menu">
+          <a href="${google}" target="_blank" rel="noopener">Google Calendar</a>
+          <a href="assets/kmec-2026.ics" download>${u.calApple}</a>
+          <a href="${outlook}" target="_blank" rel="noopener">Outlook.com</a>
+          <a href="assets/kmec-2026.ics" download>${u.calIcs}</a>
+        </div>
+      </details>`;
+  });
+}
+document.addEventListener("click", (ev) => {
+  document.querySelectorAll("details.cal[open]").forEach((d) => { if (!d.contains(ev.target)) d.open = false; });
+});
 
 // ---------- Registration ----------
 function renderRegister() {

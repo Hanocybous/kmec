@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//KMEC//Kalamari Model European Conference//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:kmec-2026-20th-session@hanocybous.github.io
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261120
+DTEND;VALUE=DATE:20261123
+SUMMARY:KMEC 2026 – 20th Kalamari Model European Conference
+LOCATION:Hellenic-French School of Kalamari\, Georgikis Scholis Avenue 44\, 555 35 Pylaia\, Thessaloniki\, Greece
+DESCRIPTION:20th Kalamari Model European Conference\, a student simulation of the European Parliament. Programme and details: https://hanocybous.github.io/kmec/
+URL:https://hanocybous.github.io/kmec/
+END:VEVENT
+END:VCALENDAR

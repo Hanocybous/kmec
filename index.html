@@ -5,9 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>KMEC 2026 · Kalamari Model European Conference</title>
   <meta name="description" content="The 20th Kalamari Model European Conference (KMEC), 20–22 November 2026, Thessaloniki. A student simulation of the European Parliament for Gymnasium and Lyceum students.">
+  <link rel="canonical" href="https://hanocybous.github.io/kmec/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="KMEC 2026">
+  <meta property="og:url" content="https://hanocybous.github.io/kmec/">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:locale:alternate" content="el_GR">
   <meta property="og:title" content="20th KMEC · Kalamari Model European Conference">
-  <meta property="og:description" content="20–22 November 2026 · A student simulation of the European Parliament for high school students.">
-  <meta property="og:image" content="assets/img/s18-3.jpg">
+  <meta property="og:description" content="20–22 November 2026 · Thessaloniki. A student simulation of the European Parliament for Gymnasium and Lyceum students. Register your school.">
+  <meta property="og:image" content="https://hanocybous.github.io/kmec/assets/share.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="KMEC 2026: Kalamari Model European Conference, 20–22 November 2026, Thessaloniki">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://hanocybous.github.io/kmec/assets/share.jpg">
+  <meta name="theme-color" content="#0b2e8a">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,6 +42,7 @@
       <a href="#history" data-i18n="nav.history">Past sessions</a>
       <a href="#gallery" data-i18n="nav.gallery">Gallery</a>
       <a href="#faq" data-i18n="nav.faq">FAQ</a>
+      <a href="#venue" data-i18n="nav.venue">Venue</a>
       <a href="#contact" data-i18n="nav.contact">Contact</a>
     </nav>
     <div class="nav__actions">
@@ -61,6 +74,7 @@
       <div class="hero__cta">
         <a class="btn btn--gold" href="#register" data-i18n="hero.cta1">Register your school</a>
         <a class="btn btn--ghost" href="#history" data-i18n="hero.cta2">See past sessions</a>
+        <div class="cal-slot"></div>
       </div>
     </div>
   </section>
@@ -201,6 +215,17 @@
         <p data-i18n="join.note">Interested in bringing your school to the 20th KMEC? Register below and the organising committee will be in touch.</p>
         <a class="btn btn--gold" href="#register" data-i18n="join.btn">Register your school</a>
       </div>
+      <div class="poster">
+        <img src="assets/img/poster-thumb.jpg" alt="" width="120" height="170" loading="lazy">
+        <div>
+          <h3 data-i18n="pos.title">Spread the word at your school</h3>
+          <p data-i18n="pos.p">Print our A4 poster for your noticeboard or share it with students. The QR code takes them straight to this site.</p>
+          <div class="poster__btns">
+            <a class="btn btn--ghost btn--sm" href="assets/docs/kmec-2026-poster-en.pdf" target="_blank" rel="noopener" data-i18n="pos.en">Poster in English (PDF)</a>
+            <a class="btn btn--ghost btn--sm" href="assets/docs/kmec-2026-poster-el.pdf" target="_blank" rel="noopener" data-i18n="pos.el">Poster in Greek (PDF)</a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -254,6 +279,32 @@
     <h2 data-i18n="gal.title">Moments from past sessions</h2>
     <div class="filters" id="filters" role="tablist"></div>
     <div class="gallery" id="galleryGrid"></div>
+  </section>
+
+  <!-- VENUE -->
+  <section class="section wrap" id="venue">
+    <p class="eyebrow" data-i18n="ven.eyebrow">Venue</p>
+    <h2 data-i18n="ven.title">Getting to KMEC</h2>
+    <div class="venue">
+      <div class="venue__info">
+        <h3 data-i18n="ven.name">Hellenic-French School of Kalamari</h3>
+        <p class="venue__addr" data-i18n="ven.addr">Georgikis Scholis Avenue 44<br>555 35 Pylaia, Thessaloniki, Greece</p>
+        <div class="venue__btns">
+          <a class="btn btn--gold btn--sm" href="https://www.google.com/maps/dir/?api=1&amp;destination=40.562715,22.973656" target="_blank" rel="noopener" data-i18n="ven.gmaps">Directions (Google Maps)</a>
+          <a class="btn btn--line btn--sm" href="https://maps.apple.com/?daddr=40.562715,22.973656&amp;q=Hellenic-French%20School%20of%20Kalamari" target="_blank" rel="noopener" data-i18n="ven.amaps">Apple Maps</a>
+        </div>
+        <ul class="venue__notes">
+          <li data-i18n="ven.n1"><strong>Coming from outside Thessaloniki?</strong> Email the organisers before you travel and we'll send you arrival details for your group.</li>
+          <li data-i18n="ven.n2"><strong>Need travel support?</strong> Tick "Yes" in the registration form and we'll be in touch.</li>
+          <li data-i18n="ven.n3"><strong>Add the dates to your calendar</strong> so your group doesn't miss them.</li>
+        </ul>
+        <div class="cal-slot cal-slot--light"></div>
+      </div>
+      <div class="venue__map">
+        <iframe title="Map: Hellenic-French School of Kalamari" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://maps.google.com/maps?q=%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%BF%CE%B3%CE%B1%CE%BB%CE%BB%CE%B9%CE%BA%CE%AE%20%CE%A3%CF%87%CE%BF%CE%BB%CE%AE%20%CE%9A%CE%B1%CE%BB%CE%B1%CE%BC%CE%B1%CF%81%CE%AF&amp;z=15&amp;output=embed"></iframe>
+      </div>
+    </div>
   </section>
 
   <!-- FAQ -->
