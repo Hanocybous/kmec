@@ -258,3 +258,4 @@ details p { padding: 0 22px 18px; margin: 0; color: var(--muted); }
 .register__soon h3 { color: var(--blue-deep); font-size: 1.4rem; margin-top: 8px; }
 .register__soon p { color: var(--muted); max-width: 440px; margin-inline: auto; }
 @media (max-width: 860px) { .register { grid-template-columns: 1fr; } }
+.committee__code { font-family: var(--serif); font-size: 1.9rem; color: var(--blue); line-height: 1; margin-bottom: 4px; letter-spacing: .02em; }

@@ -95,24 +95,24 @@ const GALLERY = [
 
 // ---------- Registration ----------
 // Paste the Google Form link here (the normal "viewform" link). Leave "" until it exists.
-const FORM_URL = "";
+const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSfbYg_AkIAgW6rIFhAjzr88U6Va8E6M3G7tVozOzXMV-ZTFwQ/viewform";
 const FALLBACK_EMAIL = "vkarfis1@gmail.com";
 
 // ---------- Committees ----------
+const t = (en, el) => ({ en, el });
 // Fill in name/topic/chairs when announced. guide = link to a study guide PDF (optional).
 // Leave a field as null to show "to be announced".
 const COMMITTEES = [
-  { lang: "EN", name: null, topic: null, chairs: null, guide: null },
-  { lang: "EN", name: null, topic: null, chairs: null, guide: null },
-  { lang: "EN", name: null, topic: null, chairs: null, guide: null },
-  { lang: "EN", name: null, topic: null, chairs: null, guide: null },
-  { lang: "EN", name: null, topic: null, chairs: null, guide: null },
-  { lang: "EN", name: null, topic: null, chairs: null, guide: null },
+  { lang: "EN", code: "AFET", name: t("Foreign Affairs", "Εξωτερικών Υποθέσεων"), topic: null, chairs: null, guide: null },
+  { lang: "EN", code: "DROI", name: t("Human Rights", "Ανθρωπίνων Δικαιωμάτων"), topic: null, chairs: null, guide: null },
+  { lang: "EN", code: "ENV", name: t("Environment", "Περιβάλλοντος"), topic: null, chairs: null, guide: null },
+  { lang: "EN", code: "FEMM", name: t("Women's Rights & Gender Equality", "Δικαιωμάτων των Γυναικών & Ισότητας των Φύλων"), topic: null, chairs: null, guide: null },
+  { lang: "EN", code: "IMCO", name: t("Internal Market & Consumer Protection", "Εσωτερικής Αγοράς & Προστασίας των Καταναλωτών"), topic: null, chairs: null, guide: null },
+  { lang: "EN", code: "INTA", name: t("International Trade", "Διεθνούς Εμπορίου"), topic: null, chairs: null, guide: null },
   { lang: "FR", name: null, topic: null, chairs: null, guide: null },
 ];
 
 // ---------- Schedule (provisional) ----------
-const t = (en, el) => ({ en, el });
 const SCHEDULE = [
   { date: "2026-11-20", label: t("Fri 20 Nov", "Παρ 20 Νοε"), items: [
     ["15:00", t("Arrival and registration", "Άφιξη και εγγραφές"), t("Pick up your badge and conference pack.", "Παραλαβή καρτελάκι και φακέλου συνεδρίου.")],
@@ -384,11 +384,12 @@ function renderCommittees() {
   let enCount = 0;
   document.getElementById("committeesGrid").innerHTML = COMMITTEES.map((c) => {
     const fr = c.lang === "FR";
-    const name = c.name || (fr ? u.comFRName : u.comName(++enCount));
+    const name = c.name ? c.name[lang] : (fr ? u.comFRName : u.comName(++enCount));
     const tba = `<span class="tba">${u.tba}</span>`;
     return `
     <article class="committee${fr ? " committee--fr" : ""}">
       <span class="committee__lang">${fr ? "FR · " + u.comFR : "EN · " + u.comEN}</span>
+      ${c.code ? `<b class="committee__code">${c.code}</b>` : ""}
       <h3>${name}</h3>
       <dl>
         <dt>${u.topic}</dt><dd>${c.topic || tba}</dd>
