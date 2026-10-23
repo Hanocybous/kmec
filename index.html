@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KMEC 2026 · Kalamari Model European Conference</title>
+  <meta name="description" content="The 20th Kalamari Model European Conference (KMEC), 20–22 November 2026, Thessaloniki. A student simulation of the European Parliament for Gymnasium and Lyceum students.">
+  <meta property="og:title" content="20th KMEC · Kalamari Model European Conference">
+  <meta property="og:description" content="20–22 November 2026 · A student simulation of the European Parliament for high school students.">
+  <meta property="og:image" content="assets/img/s18-3.jpg">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,500;7..72,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<header class="nav" id="top">
+  <div class="nav__inner">
+    <a class="brand" href="#top" aria-label="KMEC home">
+      <svg class="brand__stars" viewBox="0 0 40 40" aria-hidden="true"><g fill="currentColor" id="ring"></g></svg>
+      <span>KMEC<small>2026</small></span>
+    </a>
+    <nav class="nav__links" id="navLinks">
+      <a href="#about" data-i18n="nav.about">About</a>
+      <a href="#how" data-i18n="nav.how">How it works</a>
+      <a href="#goals" data-i18n="nav.goals">Goals</a>
+      <a href="#join" data-i18n="nav.join">Join</a>
+      <a href="#history" data-i18n="nav.history">Past sessions</a>
+      <a href="#gallery" data-i18n="nav.gallery">Gallery</a>
+      <a href="#faq" data-i18n="nav.faq">FAQ</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
+    </nav>
+    <div class="nav__actions">
+      <button class="lang" id="langBtn" type="button" aria-label="Switch language">ΕΛ</button>
+      <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__bg" style="background-image:url('assets/img/s18-3.jpg')"></div>
+    <div class="hero__content wrap">
+      <p class="eyebrow eyebrow--light" data-i18n="hero.eyebrow">20th Session · Anniversary Edition</p>
+      <h1 data-i18n="hero.title">Kalamari Model European Conference</h1>
+      <p class="hero__lead" data-i18n="hero.lead">Step into the European Parliament. Debate the issues shaping Europe, write real proposals and vote on them, with around 170 students from across Greece.</p>
+      <div class="hero__meta">
+        <div><span class="k" data-i18n="hero.when">When</span><strong data-i18n="hero.date">20–22 November 2026</strong></div>
+        <div><span class="k" data-i18n="hero.where">Where</span><strong data-i18n="hero.place">Hellenic-French School of Kalamari, Thessaloniki</strong></div>
+        <div><span class="k" data-i18n="hero.lang">Languages</span><strong data-i18n="hero.langs">English &amp; French</strong></div>
+      </div>
+      <div class="countdown" id="countdown" aria-live="polite">
+        <div><b id="cd-d">--</b><span data-i18n="cd.d">days</span></div>
+        <div><b id="cd-h">--</b><span data-i18n="cd.h">hours</span></div>
+        <div><b id="cd-m">--</b><span data-i18n="cd.m">minutes</span></div>
+      </div>
+      <div class="hero__cta">
+        <a class="btn btn--gold" href="#join" data-i18n="hero.cta1">Bring your school</a>
+        <a class="btn btn--ghost" href="#history" data-i18n="hero.cta2">See past sessions</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats wrap" aria-label="Key numbers">
+    <div class="stat"><b>20</b><span data-i18n="stat.1">sessions since the first KMEC</span></div>
+    <div class="stat"><b>~170</b><span data-i18n="stat.2">student delegates each year</span></div>
+    <div class="stat"><b>7</b><span data-i18n="stat.3">committees: 6 in English, 1 in French</span></div>
+    <div class="stat"><b>3</b><span data-i18n="stat.4">days of debate, ending in a General Assembly</span></div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section wrap split" id="about">
+    <div>
+      <p class="eyebrow" data-i18n="about.eyebrow">About KMEC</p>
+      <h2 data-i18n="about.title">A student parliament for Europe's big questions</h2>
+      <p data-i18n="about.p1">KMEC is a mostly English-speaking student conference that simulates how the <strong>European Parliament</strong> works. It is organised by alumni of the Hellenic-French School of Kalamari, with the support of the School's Alumni Association.</p>
+      <p data-i18n="about.p2">Delegates tackle questions of equality and of social, political, cultural and environmental policy, with a focus on <strong>geopolitics</strong>, <strong>human rights</strong> and <strong>sustainable development</strong>.</p>
+      <p data-i18n="about.p3">It is open to Gymnasium and Lyceum students from Kalamari, from other schools in Central Macedonia, and from across Greece. For many, it is their very first conference.</p>
+    </div>
+    <figure class="photo-stack">
+      <img src="assets/img/s19-1.jpg" alt="Students presenting at the podium during KMEC" loading="lazy">
+      <img src="assets/img/s18-1.jpg" alt="A speaker addresses the conference" loading="lazy">
+    </figure>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section section--tint" id="how">
+    <div class="wrap">
+      <p class="eyebrow" data-i18n="how.eyebrow">How it works</p>
+      <h2 data-i18n="how.title">From committee room to General Assembly</h2>
+      <ol class="steps">
+        <li>
+          <span class="steps__n">1</span>
+          <h3 data-i18n="how.s1t">Join a committee</h3>
+          <p data-i18n="how.s1">Delegates are split into committees, each with its own topic of European interest.</p>
+        </li>
+        <li>
+          <span class="steps__n">2</span>
+          <h3 data-i18n="how.s2t">Debate and share ideas</h3>
+          <p data-i18n="how.s2">Guided by experienced chairs, you research, discuss and listen to other points of view.</p>
+        </li>
+        <li>
+          <span class="steps__n">3</span>
+          <h3 data-i18n="how.s3t">Write a proposal</h3>
+          <p data-i18n="how.s3">Through productive dialogue, each committee agrees on proposals to tackle a critical issue for Europe.</p>
+        </li>
+        <li>
+          <span class="steps__n">4</span>
+          <h3 data-i18n="how.s4t">Vote in the General Assembly</h3>
+          <p data-i18n="how.s4">Committees present their proposals, give constructive criticism on others', and vote, just like the European Parliament.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- GOALS -->
+  <section class="section wrap" id="goals">
+    <p class="eyebrow" data-i18n="goals.eyebrow">Why we do it</p>
+    <h2 data-i18n="goals.title">What KMEC is for</h2>
+    <div class="cards">
+      <article class="card"><div class="card__icon">💬</div><h3 data-i18n="g1t">Real dialogue</h3><p data-i18n="g1">A safe space to exchange views and express what you believe. In a time of constant polarisation, finding common ground matters more than ever.</p></article>
+      <article class="card"><div class="card__icon">🧠</div><h3 data-i18n="g2t">Critical thinking</h3><p data-i18n="g2">Sharpen your judgement by examining issues that affect young people directly.</p></article>
+      <article class="card"><div class="card__icon">🌍</div><h3 data-i18n="g3t">Staying informed</h3><p data-i18n="g3">Learn about current issues facing Europe, Greece and you, and practise researching and debating them.</p></article>
+      <article class="card"><div class="card__icon">🧩</div><h3 data-i18n="g4t">Problem solving</h3><p data-i18n="g4">Build analytical skills by searching for solutions and proposals to pressing social issues.</p></article>
+      <article class="card"><div class="card__icon">🗣️</div><h3 data-i18n="g5t">Languages</h3><p data-i18n="g5">Practise your English and French in a real setting, with real stakes.</p></article>
+    </div>
+
+    <div class="new-goals">
+      <h3 data-i18n="ng.title">New for our 20th year</h3>
+      <ul>
+        <li data-i18n="ng1"><strong>More schools, more voices.</strong> We want more students from other schools, so more perspectives are heard.</li>
+        <li data-i18n="ng2"><strong>Reaching schools outside the city.</strong> We are inviting more schools from the regions, and aim to partly cover their students' travel and accommodation.</li>
+        <li data-i18n="ng3"><strong>A better experience.</strong> Improved provisions for every participant, plus commemorative printed material for the anniversary.</li>
+        <li data-i18n="ng4"><strong>Wider partnerships.</strong> Working with the Region of Central Macedonia so as many schools as possible can take part.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- JOIN -->
+  <section class="section section--blue" id="join">
+    <div class="wrap">
+      <p class="eyebrow eyebrow--light" data-i18n="join.eyebrow">Take part</p>
+      <h2 data-i18n="join.title">Who can join?</h2>
+      <div class="roles">
+        <div class="role">
+          <h3 data-i18n="r1t">Students</h3>
+          <p data-i18n="r1">Gymnasium and Lyceum students, from any school, with or without conference experience. Come as a delegate and represent your committee.</p>
+        </div>
+        <div class="role">
+          <h3 data-i18n="r2t">Schools &amp; teachers</h3>
+          <p data-i18n="r2">Bring a group from your school. Teachers accompany their students and are welcome throughout the conference.</p>
+        </div>
+        <div class="role">
+          <h3 data-i18n="r3t">Experienced students</h3>
+          <p data-i18n="r3">Older students and alumni help run the conference as chairs, members of the presidency, or reporters on the press team.</p>
+        </div>
+      </div>
+      <div class="join__cta">
+        <p data-i18n="join.note">Interested in bringing your school to the 20th KMEC? Get in touch with the organising committee and we will send you the details.</p>
+        <a class="btn btn--gold" href="#contact" data-i18n="join.btn">Contact the organisers</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- HISTORY -->
+  <section class="section wrap" id="history">
+    <p class="eyebrow" data-i18n="hist.eyebrow">Our story</p>
+    <h2 data-i18n="hist.title">19 sessions, and counting</h2>
+    <p class="lede" data-i18n="hist.lede">KMEC began as an initiative of Lyceum students, working with alumni, to introduce younger students to English-speaking student conferences. Over the years it has grown into a regional event, with guest schools from Thessaloniki, Soufli and Alexandroupoli, and official support from the European Parliament Liaison Office in Greece.</p>
+    <ol class="timeline" id="timeline"></ol>
+    <p class="source"><span data-i18n="hist.src">Full archive on the school website:</span> <a href="https://kalamari.gr/index.php/school-life/foreign-languages/kmec" target="_blank" rel="noopener">kalamari.gr/kmec ↗</a></p>
+  </section>
+
+  <!-- VIDEOS -->
+  <section class="section section--tint" id="videos">
+    <div class="wrap">
+      <p class="eyebrow" data-i18n="vid.eyebrow">Watch</p>
+      <h2 data-i18n="vid.title">KMEC on video</h2>
+      <div class="videos" id="videos-grid"></div>
+      <a class="news" href="https://kalamari.gr/images/2026/19th%20KMECNews.pdf" target="_blank" rel="noopener">
+        <img src="assets/img/news-cover.jpg" alt="Cover of the 19th KMEC News" loading="lazy">
+        <div>
+          <p class="eyebrow" data-i18n="news.eyebrow">Read</p>
+          <h3 data-i18n="news.title">19th KMEC News</h3>
+          <p data-i18n="news.p">A 16-page photo report of last year's conference, with thanks to everyone who made it happen.</p>
+          <span class="link" data-i18n="news.link">Open the PDF ↗</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="section wrap" id="gallery">
+    <p class="eyebrow" data-i18n="gal.eyebrow">Gallery</p>
+    <h2 data-i18n="gal.title">Moments from past sessions</h2>
+    <div class="filters" id="filters" role="tablist"></div>
+    <div class="gallery" id="galleryGrid"></div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section--tint" id="faq">
+    <div class="wrap narrow">
+      <p class="eyebrow" data-i18n="faq.eyebrow">Questions</p>
+      <h2 data-i18n="faq.title">Frequently asked</h2>
+      <details><summary data-i18n="q1">Do I need previous conference experience?</summary><p data-i18n="a1">No. KMEC is designed as a first conference experience. Older students and alumni chair the committees and guide new delegates through the procedure.</p></details>
+      <details><summary data-i18n="q2">What language is the conference in?</summary><p data-i18n="a2">Mostly English. There are six English-speaking committees and one French-speaking committee.</p></details>
+      <details><summary data-i18n="q3">Who can take part?</summary><p data-i18n="a3">Gymnasium and Lyceum students, from the Hellenic-French School of Kalamari and from any other school, in Central Macedonia or further afield.</p></details>
+      <details><summary data-i18n="q4">What topics are discussed?</summary><p data-i18n="a4">Issues that matter for Europe: equality, and social, political, cultural and environmental questions, with emphasis on geopolitics, human rights and sustainable development. This year's committee topics will be announced here.</p></details>
+      <details><summary data-i18n="q5">Our school is far from Thessaloniki. Can we still come?</summary><p data-i18n="a5">Yes, and we especially want you to. This year we aim to partly cover travel and accommodation for students from schools outside the city. Contact us to find out more.</p></details>
+      <details><summary data-i18n="q6">How does my school register?</summary><p data-i18n="a6">Email one of the organisers below. We will send you the details and the next steps.</p></details>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section wrap" id="contact">
+    <p class="eyebrow" data-i18n="ct.eyebrow">Contact</p>
+    <h2 data-i18n="ct.title">The organising committee</h2>
+    <p class="lede" data-i18n="ct.lede">Questions, registrations or partnership ideas? Write to any of us.</p>
+    <div class="team">
+      <a class="person" href="mailto:vkarfis1@gmail.com"><b data-i18n="p1">Vasileios Karfis</b><span>vkarfis1@gmail.com</span></a>
+      <a class="person" href="mailto:chriskounadhs@gmail.com"><b data-i18n="p2">Christos Kounadis</b><span>chriskounadhs@gmail.com</span></a>
+      <a class="person" href="mailto:ppdplxdimitra@gmail.com"><b data-i18n="p3">Dimitra Papadopoulou</b><span>ppdplxdimitra@gmail.com</span></a>
+      <a class="person" href="mailto:bpapazachos@gmail.com"><b data-i18n="p4">Vasileios Papazachos</b><span>bpapazachos@gmail.com</span></a>
+    </div>
+    <div class="supporters">
+      <p class="eyebrow" data-i18n="sup.eyebrow">With the support of</p>
+      <ul>
+        <li data-i18n="sup1">Hellenic-French School of Kalamari</li>
+        <li data-i18n="sup2">Kalamari School Alumni Association</li>
+        <li data-i18n="sup3">European Parliament Liaison Office in Greece (past sessions)</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <p><strong>KMEC</strong> · Kalamari Model European Conference · <span data-i18n="ft.date">20–22 November 2026</span></p>
+    <p><a href="#top" data-i18n="ft.top">Back to top ↑</a></p>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox" hidden>
+  <button class="lightbox__close" id="lbClose" aria-label="Close">×</button>
+  <button class="lightbox__nav prev" id="lbPrev" aria-label="Previous">‹</button>
+  <img id="lbImg" alt="">
+  <button class="lightbox__nav next" id="lbNext" aria-label="Next">›</button>
+  <p id="lbCap"></p>
+</div>
+
+<script src="assets/main.js"></script>
+</body>
+</html>
