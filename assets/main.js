@@ -142,6 +142,38 @@ const COMMITTEES = [
     chairs: null, guide: null },
 ];
 
+// ---------- Resources (files in assets/docs) ----------
+const RESOURCES = {
+  delegates: [
+    { file: "resolution-writing-guide.pdf", pages: 11, size: "83 KB",
+      title: t("Guide to Writing a Resolution", "Οδηγός σύνταξης ψηφίσματος"),
+      desc: t("What a resolution is, its three parts, and how to write strong introductory and operative clauses.", "Τι είναι ένα ψήφισμα, τα τρία μέρη του και πώς γράφονται καλές εισαγωγικές και διατακτικές ρήτρες.") },
+    { file: "resolution-phrases.pdf", pages: 4, size: "45 KB",
+      title: t("Resolution Phrases", "Φράσεις ψηφίσματος"),
+      desc: t("The list of opening phrases for introductory and operative clauses. Keep it open while you write.", "Η λίστα με τις φράσεις έναρξης για εισαγωγικές και διατακτικές ρήτρες. Κράτα τη δίπλα σου όσο γράφεις.") },
+    { file: "resolution-typing-slides.pdf", pages: 21, size: "593 KB",
+      title: t("Resolution Structure (slides)", "Η δομή του ψηφίσματος (διαφάνειες)"),
+      desc: t("A short visual walk-through of a complete resolution, from heading to operative clauses, with examples.", "Σύντομη οπτική παρουσίαση ενός ολοκληρωμένου ψηφίσματος, από την επικεφαλίδα ως τις διατακτικές ρήτρες, με παραδείγματα.") },
+  ],
+  chairs: [
+    { file: "chairing-101.pdf", pages: 17, size: "773 KB",
+      title: t("Chairing 101", "Chairing 101"),
+      desc: t("What a chairperson does: facilitating, leading and keeping the committee on track.", "Ο ρόλος του συντονιστή: διευκόλυνση, καθοδήγηση και οργάνωση της επιτροπής.") },
+    { file: "chairs-guide-committee-work.pdf", pages: 32, size: "443 KB",
+      title: t("Chairs' Guide to Committee Work", "Οδηγός συντονιστών για τη δουλειά της επιτροπής"),
+      desc: t("European Youth Parliament handbook on structuring committee work, brainstorming, facilitating discussion and feedback.", "Εγχειρίδιο του Ευρωπαϊκού Κοινοβουλίου Νέων για την οργάνωση της επιτροπής, τον καταιγισμό ιδεών, τη διευκόλυνση της συζήτησης και την ανατροφοδότηση.") },
+    { file: "topic-overview-guide.pdf", pages: 10, size: "105 KB",
+      title: t("Topic Overview Guide", "Οδηγός για το Topic Overview"),
+      desc: t("How to write your committee's topic overview: introduction, key terms, main conflicts, key actors and food for thought.", "Πώς γράφεται το topic overview της επιτροπής: εισαγωγή, βασικοί όροι, κύρια ζητήματα, βασικοί παράγοντες και ερωτήματα για σκέψη.") },
+    { file: "teambuilding.pdf", pages: 21, size: "3.6 MB",
+      title: t("Teambuilding Handbook (2004)", "Εγχειρίδιο teambuilding (2004)"),
+      desc: t("European Youth Parliament handbook of teambuilding games, each with step-by-step instructions and the equipment needed (2004 edition, scanned).", "Εγχειρίδιο παιχνιδιών teambuilding του Ευρωπαϊκού Κοινοβουλίου Νέων, με οδηγίες βήμα προς βήμα και τα απαραίτητα υλικά (έκδοση 2004, σκαναρισμένο).") },
+    { file: "teambuilding-games.pdf", pages: 16, size: "2.3 MB",
+      title: t("Teambuilding Games (2005)", "Παιχνίδια teambuilding (2005)"),
+      desc: t("Updated edition with an index: name games, warm-ups, energisers, trust and problem-solving games (2005 edition, scanned).", "Ενημερωμένη έκδοση με ευρετήριο: παιχνίδια γνωριμίας, ζεστάματος, ενέργειας, εμπιστοσύνης και επίλυσης προβλημάτων (έκδοση 2005, σκαναρισμένο).") },
+  ],
+};
+
 // ---------- Schedule (provisional) ----------
 const SCHEDULE = [
   { date: "2026-11-20", label: t("Fri 20 Nov", "Παρ 20 Νοε"), items: [
@@ -230,7 +262,10 @@ const EL = {
   "sup1": "Ελληνογαλλική Σχολή Καλαμαρί", "sup2": "Σύλλογος Αποφοίτων Σχολής Καλαμαρί",
   "sup3": "Γραφείο του Ευρωπαϊκού Κοινοβουλίου στην Ελλάδα (προηγούμενες σύνοδοι)",
   "ft.date": "20–22 Νοεμβρίου 2026", "ft.top": "Επιστροφή στην κορυφή ↑",
-  "nav.com": "Επιτροπές", "nav.sch": "Πρόγραμμα", "nav.reg": "Εγγραφή",
+  "nav.com": "Επιτροπές", "nav.res": "Υλικό",
+  "res.eyebrow": "Υλικό", "res.title": "Προετοιμασία για το KMEC",
+  "res.lede": "Οδηγοί για να προετοιμαστείς, είτε είναι το πρώτο σου συνέδριο είτε συντονίζεις επιτροπή. Όλα τα αρχεία είναι PDF που ανοίγουν στον browser ή κατεβαίνουν.",
+  "res.del": "Για συνέδρους", "res.chair": "Για συντονιστές", "nav.sch": "Πρόγραμμα", "nav.reg": "Εγγραφή",
   "com.eyebrow": "Επιτροπές", "com.title": "Επτά επιτροπές, μία Ευρώπη",
   "com.lede": "Έξι επιτροπές λειτουργούν στα αγγλικά και μία στα γαλλικά, με έμπειρους συντονιστές. Τα αστέρια δείχνουν τη δυσκολία κάθε θέματος, ώστε να επιλέξεις αυτό που σου ταιριάζει.",
   "sch.eyebrow": "Πρόγραμμα", "sch.title": "Τρεις μέρες στο KMEC", "sch.badge": "Προσωρινό",
@@ -242,10 +277,10 @@ const EL = {
 };
 
 const UI = {
-  en: { tba: "To be announced", topic: "Topic", chairs: "Chairs", guide: "Study guide ↗", comEN: "English", comFR: "French", level: "Difficulty", readTopic: "Read the topic",
+  en: { tba: "To be announced", topic: "Topic", chairs: "Chairs", guide: "Study guide ↗", comEN: "English", comFR: "French", pages: "pages", level: "Difficulty", readTopic: "Read the topic",
     regSoon: "The registration form opens soon", regSoonP: "Until it does, schools can register their interest by email. We will reply with the details.", regMail: "Email the organisers", regOpen: "Open the form in a new tab ↗", regSubject: "KMEC 2026 – School registration",
     all: "All", session: (n) => `${n}th`, video: (n) => `${n}th session`, more: "Show earlier sessions", less: "Show fewer", started: "KMEC 2026 is happening now!", photo: (n) => `${n}th session` },
-  el: { tba: "Θα ανακοινωθεί", topic: "Θέμα", chairs: "Συντονιστές", guide: "Οδηγός μελέτης ↗", comEN: "Αγγλικά", comFR: "Γαλλικά", level: "Δυσκολία", readTopic: "Διάβασε το θέμα",
+  el: { tba: "Θα ανακοινωθεί", topic: "Θέμα", chairs: "Συντονιστές", guide: "Οδηγός μελέτης ↗", comEN: "Αγγλικά", comFR: "Γαλλικά", pages: "σελίδες", level: "Δυσκολία", readTopic: "Διάβασε το θέμα",
     regSoon: "Η φόρμα εγγραφής ανοίγει σύντομα", regSoonP: "Μέχρι τότε, τα σχολεία μπορούν να δηλώσουν ενδιαφέρον με email. Θα σας απαντήσουμε με όλες τις λεπτομέρειες.", regMail: "Email στους διοργανωτές", regOpen: "Άνοιγμα της φόρμας σε νέα καρτέλα ↗", regSubject: "KMEC 2026 – Δήλωση συμμετοχής σχολείου",
     all: "Όλες", session: (n) => `${n}η`, video: (n) => `${n}η Σύνοδος`, more: "Προηγούμενες σύνοδοι", less: "Λιγότερες", started: "Το KMEC 2026 είναι σε εξέλιξη!", photo: (n) => `${n}η Σύνοδος` },
 };
@@ -268,6 +303,7 @@ function setLang(l) {
   renderTimeline();
   renderVideos();
   renderCommittees();
+  renderResources();
   renderSchedule();
   renderRegister();
   renderFilters();
@@ -448,6 +484,20 @@ document.getElementById("dayTabs").addEventListener("click", (e) => {
   dayIdx = Number(b.dataset.day);
   renderSchedule();
 });
+
+// ---------- Resources ----------
+function renderResources() {
+  const u = UI[lang];
+  const item = (r) => `
+    <li><a class="res" href="assets/docs/${r.file}" target="_blank" rel="noopener">
+      <span class="res__icon" aria-hidden="true">PDF</span>
+      <span class="res__body"><b>${r.title[lang]}</b><span>${r.desc[lang]}</span>
+      <small>${r.pages} ${u.pages} · ${r.size}</small></span>
+      <span class="res__go" aria-hidden="true">↗</span>
+    </a></li>`;
+  document.getElementById("resDelegates").innerHTML = RESOURCES.delegates.map(item).join("");
+  document.getElementById("resChairs").innerHTML = RESOURCES.chairs.map(item).join("");
+}
 
 // ---------- Registration ----------
 function renderRegister() {
