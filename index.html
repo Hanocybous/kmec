@@ -19,12 +19,12 @@
   <meta property="og:image:alt" content="KMEC 2026: Kalamari Model European Conference, 20–22 November 2026, Thessaloniki">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://hanocybous.github.io/kmec/assets/share.jpg">
-  <meta name="theme-color" content="#0b2e8a">
+  <meta name="theme-color" content="#3a4390">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,500;7..72,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/styles.css?v=202610241000">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css?v=202610241010">
 </head>
 <body>
 
@@ -32,19 +32,23 @@
   <div class="nav__inner">
     <a class="brand" href="#top" aria-label="KMEC home">
       <svg class="brand__stars" viewBox="0 0 40 40" aria-hidden="true"><g fill="currentColor" id="ring"></g></svg>
-      <span>KMEC<small>2026</small></span>
+      <span class="brand__text"><b>KMEC</b><small>Kalamari Model European Conference</small></span>
     </a>
-    <nav class="nav__links" id="navLinks">
-      <a href="#about" data-i18n="nav.about">About</a>
-      <a href="#committees" data-i18n="nav.com">Committees</a>
-      <a href="#schedule" data-i18n="nav.sch">Schedule</a>
-      <a href="#resources" data-i18n="nav.res">Resources</a>
-      <a href="#history" data-i18n="nav.history">Past sessions</a>
-      <a href="#gallery" data-i18n="nav.gallery">Gallery</a>
-      <a href="#faq" data-i18n="nav.faq">FAQ</a>
-      <a href="#venue" data-i18n="nav.venue">Venue</a>
-      <a href="#contact" data-i18n="nav.contact">Contact</a>
-    </nav>
+    <div class="nav__menu" id="navLinks">
+      <div class="nav__util">
+        <a href="#resources" data-i18n="nav.res">Resources</a>
+        <a href="#faq" data-i18n="nav.faq">FAQ</a>
+        <a href="#venue" data-i18n="nav.venue">Venue</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+      </div>
+      <nav class="nav__links" aria-label="Main">
+        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="#committees" data-i18n="nav.com">Committees</a>
+        <a href="#schedule" data-i18n="nav.sch">Schedule</a>
+        <a href="#history" data-i18n="nav.history">Past sessions</a>
+        <a href="#gallery" data-i18n="nav.gallery">Gallery</a>
+      </nav>
+    </div>
     <div class="nav__actions">
       <a class="btn btn--gold btn--sm" href="#register" data-i18n="nav.reg">Register</a>
       <button class="lang" id="langBtn" type="button" aria-label="Switch language">ΕΛ</button>
@@ -56,35 +60,42 @@
 <main>
   <!-- HERO -->
   <section class="hero">
-    <div class="hero__bg" style="background-image:url('assets/img/s18-3.jpg')"></div>
-    <div class="hero__content wrap">
-      <p class="eyebrow eyebrow--light" data-i18n="hero.eyebrow">20th Session · Anniversary Edition</p>
-      <h1 data-i18n="hero.title">Kalamari Model European Conference</h1>
-      <p class="hero__lead" data-i18n="hero.lead">Step into the European Parliament. Debate the issues shaping Europe, write real proposals and vote on them, with around 170 students from across Greece.</p>
-      <div class="hero__meta">
-        <div><span class="k" data-i18n="hero.when">When</span><strong data-i18n="hero.date">20–22 November 2026</strong></div>
-        <div><span class="k" data-i18n="hero.where">Where</span><strong data-i18n="hero.place">Hellenic-French School of Kalamari, Thessaloniki</strong></div>
-        <div><span class="k" data-i18n="hero.lang">Languages</span><strong data-i18n="hero.langs">English &amp; French</strong></div>
+    <div class="hero__inner wrap">
+      <div class="hero__content">
+        <p class="eyebrow" data-i18n="hero.eyebrow">20th Session · Anniversary Edition</p>
+        <h1 data-i18n="hero.title">Kalamari Model European Conference</h1>
+        <p class="hero__lead" data-i18n="hero.lead">Step into the European Parliament. Debate the issues shaping Europe, write real proposals and vote on them, with around 170 students from across Greece.</p>
+        <div class="hero__meta">
+          <div><span class="k" data-i18n="hero.when">When</span><strong data-i18n="hero.date">20–22 November 2026</strong></div>
+          <div><span class="k" data-i18n="hero.where">Where</span><strong data-i18n="hero.place">Hellenic-French School of Kalamari, Thessaloniki</strong></div>
+          <div><span class="k" data-i18n="hero.lang">Languages</span><strong data-i18n="hero.langs">English &amp; French</strong></div>
+        </div>
+        <div class="countdown" id="countdown" aria-live="polite">
+          <div><b id="cd-d">--</b><span data-i18n="cd.d">days</span></div>
+          <div><b id="cd-h">--</b><span data-i18n="cd.h">hours</span></div>
+          <div><b id="cd-m">--</b><span data-i18n="cd.m">minutes</span></div>
+        </div>
+        <div class="hero__cta">
+          <a class="btn btn--gold" href="#register" data-i18n="hero.cta1">Register your school</a>
+          <a class="btn btn--line" href="#history" data-i18n="hero.cta2">See past sessions</a>
+          <div class="cal-slot cal-slot--light cal-slot--hero"></div>
+        </div>
       </div>
-      <div class="countdown" id="countdown" aria-live="polite">
-        <div><b id="cd-d">--</b><span data-i18n="cd.d">days</span></div>
-        <div><b id="cd-h">--</b><span data-i18n="cd.h">hours</span></div>
-        <div><b id="cd-m">--</b><span data-i18n="cd.m">minutes</span></div>
-      </div>
-      <div class="hero__cta">
-        <a class="btn btn--gold" href="#register" data-i18n="hero.cta1">Register your school</a>
-        <a class="btn btn--ghost" href="#history" data-i18n="hero.cta2">See past sessions</a>
-        <div class="cal-slot"></div>
-      </div>
+      <figure class="hero__art" aria-hidden="true">
+        <img src="assets/img/s18-3.jpg" alt="">
+        <span class="hero__shape hero__shape--a"></span>
+        <span class="hero__shape hero__shape--b"></span>
+        <span class="hero__shape hero__shape--c"></span>
+      </figure>
     </div>
   </section>
 
   <!-- STATS -->
   <section class="stats wrap" aria-label="Key numbers">
-    <div class="stat"><b>20</b><span data-i18n="stat.1">sessions since the first KMEC</span></div>
-    <div class="stat"><b>~170</b><span data-i18n="stat.2">student delegates each year</span></div>
-    <div class="stat"><b>7</b><span data-i18n="stat.3">committees: 6 in English, 1 in French</span></div>
-    <div class="stat"><b>3</b><span data-i18n="stat.4">days of debate, ending in a General Assembly</span></div>
+    <div class="stat"><i class="stat__dot" style="--c:var(--blue)"></i><b>20</b><span data-i18n="stat.1">sessions since the first KMEC</span></div>
+    <div class="stat"><i class="stat__dot" style="--c:var(--pink)"></i><b>~170</b><span data-i18n="stat.2">student delegates each year</span></div>
+    <div class="stat"><i class="stat__dot" style="--c:var(--teal)"></i><b>7</b><span data-i18n="stat.3">committees: 6 in English, 1 in French</span></div>
+    <div class="stat"><i class="stat__dot" style="--c:var(--yellow)"></i><b>3</b><span data-i18n="stat.4">days of debate, ending in a General Assembly</span></div>
   </section>
 
   <!-- ABOUT -->
@@ -397,6 +408,6 @@
   <p id="lbCap"></p>
 </div>
 
-<script src="assets/main.js?v=202610241000"></script>
+<script src="assets/main.js?v=202610241010"></script>
 </body>
 </html>
