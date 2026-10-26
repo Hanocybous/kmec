@@ -268,6 +268,17 @@ const EL = {
   "q9": "Παρέχεται φαγητό;", "a9": "Ναι. Υπάρχουν δύο μεγάλα διαλείμματα με φαγητό και μικρότερα διαλείμματα με καφέ, χυμό και σνακ.",
   "q10": "Παίρνουν βεβαίωση οι σύνεδροι;", "a10": "Ναι. Κάθε σύνεδρος λαμβάνει βεβαιώσεις που εκδίδονται από το Ευρωπαϊκό Κοινοβούλιο Νέων (EYP).",
   "reg.c4": "Κόστος συμμετοχής: 10€ ανά σύνεδρο",
+  "ann.title": "Οι εγγραφές κλείνουν τη Δευτέρα 2 Νοεμβρίου.", "ann.link": "Δηλώστε συμμετοχή →",
+  "reg.c5": "<strong>Προθεσμία: Δευτέρα 2 Νοεμβρίου 2026</strong>",
+  "reg.priv": "<strong>Προστασία δεδομένων:</strong> χρησιμοποιούμε τα στοιχεία αυτής της φόρμας μόνο για να οργανώσουμε τη συμμετοχή του σχολείου σας στο KMEC 2026 και για να επικοινωνήσουμε με τον συνοδό καθηγητή. Τα βλέπει μόνο η οργανωτική επιτροπή. Δεν τα μοιραζόμαστε με κανέναν άλλον και τα διαγράφουμε μετά το συνέδριο. Ερωτήσεις: <a href=\"mailto:vkarfis1@gmail.com\">vkarfis1@gmail.com</a>",
+  "q11": "Ποια είναι η προθεσμία εγγραφής;", "a11": "Δευτέρα 2 Νοεμβρίου 2026. Ο συνοδός καθηγητής πρέπει να συμπληρώσει τη φόρμα εγγραφής μέχρι το τέλος εκείνης της ημέρας.",
+  "prep.eyebrow": "Πριν έρθεις", "prep.title": "Η λίστα σου",
+  "prep.1t": "Δήλωσε το σχολείο σου", "prep.1": "Ο συνοδός καθηγητής συμπληρώνει τη φόρμα έως τη Δευτέρα 2 Νοεμβρίου.",
+  "prep.2t": "Διάβασε το θέμα της επιτροπής σου", "prep.2": "Επτά επιτροπές, έξι στα αγγλικά και μία στα γαλλικά. Κάθε θέμα έχει σύντομη περιγραφή.",
+  "prep.3t": "Μάθε πώς γράφεται ένα ψήφισμα", "prep.3": "Διάβασε τον Οδηγό σύνταξης ψηφίσματος και κράτα δίπλα σου τις Φράσεις ψηφίσματος.",
+  "prep.4t": "Σκέψου τι θα φορέσεις", "prep.4": "Επίσημα, όπως στις συνόδους του Ευρωπαϊκού Κοινοβουλίου Νέων. Επιτρέπεται και κάτι λίγο πιο χαλαρό.",
+  "prep.5t": "Δες το πρόγραμμα", "prep.5": "Τρεις μέρες, από την Παρασκευή 20 έως την Κυριακή 22 Νοεμβρίου. Οι ώρες είναι ακόμα προσωρινές.",
+  "prep.6t": "Οργάνωσε τη διαδρομή", "prep.6": "Η σχολή βρίσκεται στην Πυλαία Θεσσαλονίκης. Πρόσθεσε τις ημερομηνίες στο ημερολόγιό σου.",
   "pos.title": "Διαδώστε το στο σχολείο σας", "pos.p": "Εκτυπώστε την αφίσα Α4 για τον πίνακα ανακοινώσεων ή μοιραστείτε τη με τους μαθητές. Ο κωδικός QR οδηγεί κατευθείαν σε αυτή την ιστοσελίδα.",
   "pos.en": "Αφίσα στα αγγλικά (PDF)", "pos.el": "Αφίσα στα ελληνικά (PDF)",
   "ven.eyebrow": "Τοποθεσία", "ven.title": "Πώς θα έρθετε στο KMEC", "ven.name": "Ελληνογαλλική Σχολή Καλαμαρί",
@@ -288,10 +299,10 @@ const EL = {
 
 const UI = {
   en: { tba: "To be announced", topic: "Topic", chairs: "Chairs", guide: "Study guide ↗", comEN: "English", comFR: "French", pages: "pages", calAdd: "Add to calendar", calApple: "Apple Calendar (iPhone, Mac)", calIcs: "Other calendar (.ics file)", level: "Difficulty", readTopic: "Read the topic",
-    regSoon: "The registration form opens soon", regSoonP: "Until it does, schools can register their interest by email. We will reply with the details.", regMail: "Email the organisers", regOpen: "Open the form in a new tab ↗", regSubject: "KMEC 2026 – School registration",
+    annClosed: "Registration for KMEC 2026 is now closed. Thank you to every school that signed up!", regSoon: "The registration form opens soon", regSoonP: "Until it does, schools can register their interest by email. We will reply with the details.", regMail: "Email the organisers", regOpen: "Open the form in a new tab ↗", regSubject: "KMEC 2026 – School registration",
     all: "All", session: (n) => `${n}th`, video: (n) => `${n}th session`, more: "Show earlier sessions", less: "Show fewer", started: "KMEC 2026 is happening now!", photo: (n) => `${n}th session` },
   el: { tba: "Θα ανακοινωθεί", topic: "Θέμα", chairs: "Συντονιστές", guide: "Οδηγός μελέτης ↗", comEN: "Αγγλικά", comFR: "Γαλλικά", pages: "σελίδες", calAdd: "Προσθήκη στο ημερολόγιο", calApple: "Apple Calendar (iPhone, Mac)", calIcs: "Άλλο ημερολόγιο (αρχείο .ics)", level: "Δυσκολία", readTopic: "Διάβασε το θέμα",
-    regSoon: "Η φόρμα εγγραφής ανοίγει σύντομα", regSoonP: "Μέχρι τότε, τα σχολεία μπορούν να δηλώσουν ενδιαφέρον με email. Θα σας απαντήσουμε με όλες τις λεπτομέρειες.", regMail: "Email στους διοργανωτές", regOpen: "Άνοιγμα της φόρμας σε νέα καρτέλα ↗", regSubject: "KMEC 2026 – Δήλωση συμμετοχής σχολείου",
+    annClosed: "Οι εγγραφές για το KMEC 2026 έκλεισαν. Ευχαριστούμε όλα τα σχολεία που δήλωσαν συμμετοχή!", regSoon: "Η φόρμα εγγραφής ανοίγει σύντομα", regSoonP: "Μέχρι τότε, τα σχολεία μπορούν να δηλώσουν ενδιαφέρον με email. Θα σας απαντήσουμε με όλες τις λεπτομέρειες.", regMail: "Email στους διοργανωτές", regOpen: "Άνοιγμα της φόρμας σε νέα καρτέλα ↗", regSubject: "KMEC 2026 – Δήλωση συμμετοχής σχολείου",
     all: "Όλες", session: (n) => `${n}η`, video: (n) => `${n}η Σύνοδος`, more: "Προηγούμενες σύνοδοι", less: "Λιγότερες", started: "Το KMEC 2026 είναι σε εξέλιξη!", photo: (n) => `${n}η Σύνοδος` },
 };
 
@@ -317,6 +328,7 @@ function setLang(l) {
   renderResources();
   renderSchedule();
   renderRegister();
+  renderAnnounce();
   renderFilters();
   renderGallery();
 }
@@ -565,6 +577,13 @@ document.addEventListener("click", (ev) => {
   document.querySelectorAll("details.cal[open]").forEach((d) => { if (!d.contains(ev.target)) d.open = false; });
 });
 
+// ---------- Announcement bar ----------
+const REG_CLOSES = new Date("2026-11-03T00:00:00+02:00"); // end of Monday 2 November, Greek time
+function renderAnnounce() {
+  if (new Date() < REG_CLOSES) return; // the default text from the page/translations is right
+  document.getElementById("annText").textContent = UI[lang].annClosed;
+}
+
 // ---------- Registration ----------
 function renderRegister() {
   const u = UI[lang], box = document.getElementById("registerBox");
@@ -590,7 +609,7 @@ function renderRegister() {
 const io = "IntersectionObserver" in window ? new IntersectionObserver((entries) => {
   entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } });
 }, { threshold: 0.12 }) : null;
-document.querySelectorAll(".section h2, .card, .steps li, .role, .person, .photo-stack, .new-goals, .committee, .register, .pcard").forEach((el) => {
+document.querySelectorAll(".section h2, .card, .steps li, .role, .person, .photo-stack, .new-goals, .committee, .register, .pcard, .checklist li").forEach((el) => {
   if (io) { el.classList.add("reveal"); io.observe(el); }
 });
 

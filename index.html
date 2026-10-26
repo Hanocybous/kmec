@@ -24,10 +24,58 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,500;7..72,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/styles.css?v=202610261412">
+  <link rel="stylesheet" href="assets/styles.css?v=202610261743">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "KMEC 2026 – 20th Kalamari Model European Conference",
+  "description": "A student simulation of the European Parliament for Gymnasium and Lyceum students: committee debates in English and French, ending in a General Assembly.",
+  "startDate": "2026-11-20",
+  "endDate": "2026-11-22",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "inLanguage": [
+    "en",
+    "fr",
+    "el"
+  ],
+  "image": [
+    "https://hanocybous.github.io/kmec/assets/share.jpg"
+  ],
+  "url": "https://hanocybous.github.io/kmec/",
+  "location": {
+    "@type": "Place",
+    "name": "Hellenic-French School of Kalamari",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Georgikis Scholis Avenue 44",
+      "addressLocality": "Pylaia, Thessaloniki",
+      "postalCode": "555 35",
+      "addressCountry": "GR"
+    }
+  },
+  "organizer": {
+    "@type": "Organization",
+    "name": "KMEC Organising Committee",
+    "url": "https://hanocybous.github.io/kmec/"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "10",
+    "priceCurrency": "EUR",
+    "url": "https://hanocybous.github.io/kmec/#register",
+    "availability": "https://schema.org/InStock",
+    "validThrough": "2026-11-02T23:59:59+02:00"
+  }
+}
+  </script>
 </head>
 <body>
 
+<div class="announce" id="announce" role="status">
+  <p><span id="annText"><strong data-i18n="ann.title">Registration closes on Monday 2 November.</strong> <a href="#register" data-i18n="ann.link">Register your school →</a></span></p>
+</div>
 <header class="nav" id="top">
   <div class="nav__inner">
     <a class="brand" href="#top" aria-label="KMEC home">
@@ -241,11 +289,13 @@
       <div class="register__info">
         <p data-i18n="reg.p1">One form per school, filled in by the accompanying teacher. Tell us how many students you would like to bring and which languages they prefer. We will confirm places by email.</p>
         <ul class="checks">
+          <li data-i18n="reg.c5"><strong>Deadline: Monday 2 November 2026</strong></li>
           <li data-i18n="reg.c1">Gymnasium and Lyceum students welcome</li>
           <li data-i18n="reg.c2">No previous conference experience needed</li>
           <li data-i18n="reg.c4">Participation fee: €10 per delegate</li>
           <li data-i18n="reg.c3">Schools outside Thessaloniki: ask us about travel support</li>
         </ul>
+        <p class="privacy" data-i18n="reg.priv"><strong>Privacy:</strong> we use the details in this form only to organise your school's participation in KMEC 2026 and to contact the accompanying teacher. Only the organising committee sees them. We don't share them with anyone else, and we delete them after the conference. Questions: <a href="mailto:vkarfis1@gmail.com">vkarfis1@gmail.com</a></p>
       </div>
       <div class="register__form" id="registerBox"></div>
     </div>
@@ -283,6 +333,20 @@
         </article>
       </div>
     </div>
+  </section>
+
+  <!-- BEFORE YOU COME -->
+  <section class="section wrap" id="prepare">
+    <p class="eyebrow" data-i18n="prep.eyebrow">Before you come</p>
+    <h2 data-i18n="prep.title">Your checklist</h2>
+    <ol class="checklist">
+      <li><a href="#register"><b data-i18n="prep.1t">Register your school</b><span data-i18n="prep.1">The accompanying teacher fills in the form by Monday 2 November.</span></a></li>
+      <li><a href="#committees"><b data-i18n="prep.2t">Read your committee's topic</b><span data-i18n="prep.2">Seven committees, six in English and one in French. Each topic has a short description.</span></a></li>
+      <li><a href="#resources"><b data-i18n="prep.3t">Learn how resolutions work</b><span data-i18n="prep.3">Read the Guide to Writing a Resolution and keep the Resolution Phrases handy.</span></a></li>
+      <li><a href="#practical"><b data-i18n="prep.4t">Plan your outfit</b><span data-i18n="prep.4">Formal, as at European Youth Parliament sessions. A slightly more casual look is fine.</span></a></li>
+      <li><a href="#schedule"><b data-i18n="prep.5t">Check the programme</b><span data-i18n="prep.5">Three days, from Friday 20 to Sunday 22 November. Times are still provisional.</span></a></li>
+      <li><a href="#venue"><b data-i18n="prep.6t">Plan your trip</b><span data-i18n="prep.6">The school is in Pylaia, Thessaloniki. Add the dates to your calendar.</span></a></li>
+    </ol>
   </section>
 
   <!-- HISTORY -->
@@ -355,6 +419,7 @@
     <div class="wrap narrow">
       <p class="eyebrow" data-i18n="faq.eyebrow">Questions</p>
       <h2 data-i18n="faq.title">Frequently asked</h2>
+      <details><summary data-i18n="q11">When is the registration deadline?</summary><p data-i18n="a11">Monday 2 November 2026. The accompanying teacher should fill in the registration form before the end of that day.</p></details>
       <details><summary data-i18n="q1">Do I need previous conference experience?</summary><p data-i18n="a1">No. KMEC is designed as a first conference experience. Older students and alumni chair the committees and guide new delegates through the procedure.</p></details>
       <details><summary data-i18n="q2">What language is the conference in?</summary><p data-i18n="a2">Mostly English. There are six English-speaking committees and one French-speaking committee.</p></details>
       <details><summary data-i18n="q3">Who can take part?</summary><p data-i18n="a3">Gymnasium and Lyceum students, from the Hellenic-French School of Kalamari and from any other school, in Central Macedonia or further afield.</p></details>
@@ -405,6 +470,6 @@
   <p id="lbCap"></p>
 </div>
 
-<script src="assets/main.js?v=202610261412"></script>
+<script src="assets/main.js?v=202610261743"></script>
 </body>
 </html>

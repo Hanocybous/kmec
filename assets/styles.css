@@ -466,3 +466,22 @@ details p { padding: 0 22px 18px; margin: 0; color: var(--muted); }
   .scrap-board .gallery button { transform: rotate(var(--r)); }
   .sticker { transform: rotate(var(--sr)); }
 }
+
+/* ANNOUNCEMENT BAR */
+.announce { background: var(--indigo); color: #fff; text-align: center; font-size: .95rem; padding: 9px 16px; }
+.announce p { margin: 0; }
+.announce a { color: var(--yellow); font-weight: 700; text-decoration: none; margin-left: 6px; white-space: nowrap; }
+.announce a:hover { text-decoration: underline; }
+
+/* PRIVACY NOTE */
+.privacy { margin-top: 22px; font-size: .88rem; color: var(--muted); line-height: 1.55; background: var(--tint); padding: 12px 14px; border-radius: 10px; }
+.privacy a { overflow-wrap: anywhere; }
+
+/* BEFORE-YOU-COME CHECKLIST */
+.checklist { list-style: none; counter-reset: c; padding: 0; margin: 32px 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; }
+.checklist li { counter-increment: c; }
+.checklist a { display: grid; grid-template-columns: 44px 1fr; column-gap: 14px; height: 100%; padding: 18px 20px; border: 1px solid var(--line); border-radius: var(--radius); text-decoration: none; color: inherit; background: #fff; transition: border-color .2s, box-shadow .2s; }
+.checklist a::before { content: counter(c); grid-row: span 2; width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; background: var(--blue-soft); color: var(--indigo); font-family: var(--serif); font-weight: 700; font-size: 1.15rem; }
+.checklist a:hover { border-color: var(--bright); box-shadow: var(--shadow); }
+.checklist b { color: var(--indigo); font-size: 1.05rem; }
+.checklist span { color: var(--muted); font-size: .95rem; }
