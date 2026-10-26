@@ -24,7 +24,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,500;7..72,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/styles.css?v=202610241018">
+  <link rel="stylesheet" href="assets/styles.css?v=202610261412">
 </head>
 <body>
 
@@ -317,7 +317,11 @@
     <p class="eyebrow" data-i18n="gal.eyebrow">Gallery</p>
     <h2 data-i18n="gal.title">Moments from past sessions</h2>
     <div class="filters" id="filters" role="tablist"></div>
-    <div class="gallery" id="galleryGrid"></div>
+    <div class="scrap-board" id="scrapBoard">
+      <span class="sticker sticker--count" aria-hidden="true"><b>20</b><small data-i18n="gal.stk">sessions</small></span>
+      <span class="sticker sticker--star" aria-hidden="true">★</span>
+      <div class="gallery" id="galleryGrid"></div>
+    </div>
   </section>
 
   <!-- VENUE -->
@@ -401,6 +405,6 @@
   <p id="lbCap"></p>
 </div>
 
-<script src="assets/main.js?v=202610241018"></script>
+<script src="assets/main.js?v=202610261412"></script>
 </body>
 </html>

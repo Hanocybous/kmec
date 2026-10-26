@@ -257,7 +257,7 @@ const EL = {
   "res.eyebrow": "Υλικό", "res.title": "Προετοιμασία για το KMEC",
   "res.lede": "Οδηγοί για να προετοιμαστείς, είτε είναι το πρώτο σου συνέδριο είτε συντονίζεις επιτροπή. Όλα τα αρχεία είναι PDF που ανοίγουν στον browser ή κατεβαίνουν.",
   "res.del": "Για συνέδρους", "res.chair": "Για συντονιστές",
-  "nav.venue": "Τοποθεσία",
+  "nav.venue": "Τοποθεσία", "gal.stk": "σύνοδοι",
   "pr.eyebrow": "Καλό να ξέρετε", "pr.title": "Πρακτικές πληροφορίες",
   "pr.feeT": "Κόστος συμμετοχής", "pr.feeBig": "10€ ανά σύνεδρο", "pr.fee": "Το ίδιο για κάθε σύνεδρο, από όποιο σχολείο κι αν προέρχεται.",
   "pr.dressT": "Ενδυμασία", "pr.dressBig": "Επίσημη, όπως στο EYP", "pr.dress": "Η ίδια με τις συνόδους του Ευρωπαϊκού Κοινοβουλίου Νέων, αλλά επιτρέπεται και κάτι λίγο πιο χαλαρό.",
@@ -418,8 +418,35 @@ function renderGallery() {
   shown = filter === "all"
     ? GALLERY.flatMap((g) => g.files.slice(0, 4).map((f) => ({ f, n: g.n })))
     : GALLERY.find((g) => String(g.n) === String(filter)).files.map((f) => ({ f, n: Number(filter) }));
-  document.getElementById("galleryGrid").innerHTML = shown.map((p, i) =>
-    `<button type="button" data-i="${i}"><img src="assets/img/${p.f}" alt="KMEC ${UI[lang].photo(p.n)}" loading="lazy"></button>`).join("");
+  const tilt = [-3, 2, -1.5, 3, -2.5, 1.5];
+  const grid = document.getElementById("galleryGrid");
+  grid.innerHTML = shown.map((p, i) =>
+    `<button type="button" data-i="${i}" style="--r:${tilt[i % tilt.length]}deg;--i:${i}"><img src="assets/img/${p.f}" alt="KMEC ${UI[lang].photo(p.n)}" loading="lazy"><span class="polaroid__cap" aria-hidden="true">${UI[lang].photo(p.n)}</span></button>`).join("");
+  stickPhotos(grid);
+}
+// Scrapbook entrance: photos get "stuck" on one by one the first time the board scrolls into view,
+// and again after each filter change. The delay is dropped once they land so hover stays snappy.
+let boardSeen = false, settleTimer;
+function stickPhotos(grid) {
+  grid.classList.remove("stuck", "settled");
+  if (!boardSeen) return;
+  void grid.offsetWidth; // restart the transition
+  grid.classList.add("stuck");
+  clearTimeout(settleTimer);
+  settleTimer = setTimeout(() => grid.classList.add("settled"), 1600);
+}
+if ("IntersectionObserver" in window) {
+  const boardIo = new IntersectionObserver((entries) => {
+    if (!entries[0].isIntersecting) return;
+    boardSeen = true;
+    document.getElementById("scrapBoard").classList.add("stuck");
+    stickPhotos(document.getElementById("galleryGrid"));
+    boardIo.disconnect();
+  }, { threshold: 0.15 });
+  boardIo.observe(document.getElementById("scrapBoard"));
+} else {
+  boardSeen = true;
+  document.getElementById("scrapBoard").classList.add("stuck");
 }
 document.getElementById("filters").addEventListener("click", (e) => {
   const b = e.target.closest("button[data-f]");

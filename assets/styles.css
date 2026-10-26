@@ -416,3 +416,53 @@ details p { padding: 0 22px 18px; margin: 0; color: var(--muted); }
 .badge { background: var(--yellow); color: var(--ink); }
 .video__frame button::after { background: var(--yellow); color: var(--ink); }
 .checks li::before { background: var(--bright); color: #fff; }
+
+/* ---------- Gallery: Scrapbook Collage ---------- */
+.scrap-board { position: relative; margin-top: 8px; padding: clamp(36px, 5vw, 64px) clamp(16px, 4vw, 48px);
+  background:
+    radial-gradient(rgba(120, 90, 40, .06) 1px, transparent 1.2px) 0 0 / 7px 7px,
+    linear-gradient(#f7f0e1, #f2e8d5);
+  /* torn paper edges, top and bottom */
+  clip-path: polygon(0% 9px, 4% 2px, 9% 10px, 15% 1px, 21% 8px, 28% 2px, 34% 10px, 41% 3px, 47% 9px, 54% 1px, 60% 9px, 67% 2px, 73% 10px, 80% 2px, 86% 8px, 93% 1px, 100% 8px,
+    100% calc(100% - 8px), 93% calc(100% - 1px), 86% calc(100% - 9px), 80% calc(100% - 2px), 73% calc(100% - 10px), 67% calc(100% - 2px), 60% calc(100% - 8px), 54% calc(100% - 1px), 47% calc(100% - 9px), 41% calc(100% - 3px), 34% calc(100% - 10px), 28% calc(100% - 2px), 21% calc(100% - 8px), 15% calc(100% - 2px), 9% calc(100% - 10px), 4% calc(100% - 1px), 0% calc(100% - 8px)); }
+.scrap-board .gallery { columns: auto; display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 34px 26px; }
+.scrap-board .gallery button { --r: 0deg; position: relative; margin: 0; padding: 10px 10px 0; background: #fff; border-radius: 2px; overflow: visible;
+  box-shadow: 0 1px 2px rgba(60, 40, 10, .18), 0 8px 18px -8px rgba(60, 40, 10, .35);
+  opacity: 0; transform: translateY(-22px) scale(1.08) rotate(calc(var(--r) * 2.5));
+  transition: opacity .3s ease-out, transform .5s cubic-bezier(.22, 1, .36, 1), box-shadow .2s;
+  transition-delay: calc(min(var(--i), 14) * 60ms); }
+.scrap-board .gallery.stuck button { opacity: 1; transform: rotate(var(--r)); }
+.scrap-board .gallery.settled button { transition-delay: 0s; }
+.scrap-board .gallery.settled button:hover { transform: rotate(0deg) scale(1.04); z-index: 2; box-shadow: 0 2px 4px rgba(60, 40, 10, .18), 0 16px 28px -10px rgba(60, 40, 10, .4); }
+.scrap-board .gallery button:focus-visible { outline: 3px solid var(--bright); outline-offset: 4px; }
+.scrap-board .gallery img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.scrap-board .gallery button:hover img { transform: none; }
+.polaroid__cap { display: block; padding: 8px 2px 12px; font-family: var(--serif); font-style: italic; font-size: .95rem; color: var(--ink); text-align: center; }
+/* washi tape */
+.scrap-board .gallery button::before { content: ""; position: absolute; z-index: 1; top: -12px; left: 50%; width: 42%; height: 24px;
+  transform: translateX(-50%) rotate(calc(var(--r) * -1.4)); background: rgba(255, 217, 47, .6); box-shadow: 0 1px 2px rgba(0,0,0,.08); }
+.scrap-board .gallery button:nth-child(3n+2)::before { background: rgba(232, 64, 127, .38); }
+.scrap-board .gallery button:nth-child(3n)::before { background: rgba(0, 163, 180, .38); }
+/* stickers */
+.sticker { position: absolute; z-index: 3; display: grid; place-items: center; border-radius: 50%; border: 4px solid #fff;
+  box-shadow: 0 6px 14px -6px rgba(60, 40, 10, .45); opacity: 0; transform: scale(1.4) rotate(var(--sr));
+  transition: opacity .25s ease-out .9s, transform .4s cubic-bezier(.22, 1, .36, 1) .9s; }
+.scrap-board.stuck .sticker { opacity: 1; transform: rotate(var(--sr)); }
+.sticker--count { --sr: 12deg; top: 10px; right: clamp(8px, 3vw, 28px); width: 92px; height: 92px; background: var(--yellow); color: var(--indigo); line-height: 1; }
+.sticker--count b { font-family: var(--serif); font-size: 2.1rem; display: block; text-align: center; }
+.sticker--count small { font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; }
+.sticker--star { --sr: -14deg; bottom: 14px; left: clamp(8px, 2vw, 20px); width: 62px; height: 62px; background: var(--indigo); color: var(--yellow); font-size: 1.9rem; }
+@media (max-width: 600px) {
+  .scrap-board .gallery { grid-template-columns: 1fr 1fr; gap: 26px 14px; }
+  .scrap-board .gallery button { padding: 6px 6px 0; }
+  .polaroid__cap { font-size: .8rem; padding: 6px 0 8px; }
+  .sticker--count { width: 68px; height: 68px; top: 4px; }
+  .sticker--count b { font-size: 1.5rem; }
+  .sticker--count small { font-size: .55rem; }
+  .sticker--star { width: 46px; height: 46px; font-size: 1.4rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .scrap-board .gallery button, .sticker { transition: none; opacity: 1; }
+  .scrap-board .gallery button { transform: rotate(var(--r)); }
+  .sticker { transform: rotate(var(--sr)); }
+}
