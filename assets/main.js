@@ -299,10 +299,10 @@ const EL = {
 
 const UI = {
   en: { tba: "To be announced", topic: "Topic", chairs: "Chairs", guide: "Study guide ↗", comEN: "English", comFR: "French", pages: "pages", calAdd: "Add to calendar", calApple: "Apple Calendar (iPhone, Mac)", calIcs: "Other calendar (.ics file)", level: "Difficulty", readTopic: "Read the topic",
-    annClosed: "Registration for KMEC 2026 is now closed. Thank you to every school that signed up!", regSoon: "The registration form opens soon", regSoonP: "Until it does, schools can register their interest by email. We will reply with the details.", regMail: "Email the organisers", regOpen: "Open the form in a new tab ↗", regSubject: "KMEC 2026 – School registration",
+    annClosed: "Registration for KMEC 2026 is now closed. Thank you to every school that signed up!", regSoon: "The registration form opens soon", regSoonP: "Until it does, schools can register their interest by email. We will reply with the details.", regMail: "Email the organisers", regReady: "Ready to register?", regReadyP: "The registration form opens in a new tab. Fill it in once per school before Monday 2 November.", regOpen: "Open the registration form ↗", regSubject: "KMEC 2026 – School registration",
     all: "All", session: (n) => `${n}th`, video: (n) => `${n}th session`, more: "Show earlier sessions", less: "Show fewer", started: "KMEC 2026 is happening now!", photo: (n) => `${n}th session` },
   el: { tba: "Θα ανακοινωθεί", topic: "Θέμα", chairs: "Συντονιστές", guide: "Οδηγός μελέτης ↗", comEN: "Αγγλικά", comFR: "Γαλλικά", pages: "σελίδες", calAdd: "Προσθήκη στο ημερολόγιο", calApple: "Apple Calendar (iPhone, Mac)", calIcs: "Άλλο ημερολόγιο (αρχείο .ics)", level: "Δυσκολία", readTopic: "Διάβασε το θέμα",
-    annClosed: "Οι εγγραφές για το KMEC 2026 έκλεισαν. Ευχαριστούμε όλα τα σχολεία που δήλωσαν συμμετοχή!", regSoon: "Η φόρμα εγγραφής ανοίγει σύντομα", regSoonP: "Μέχρι τότε, τα σχολεία μπορούν να δηλώσουν ενδιαφέρον με email. Θα σας απαντήσουμε με όλες τις λεπτομέρειες.", regMail: "Email στους διοργανωτές", regOpen: "Άνοιγμα της φόρμας σε νέα καρτέλα ↗", regSubject: "KMEC 2026 – Δήλωση συμμετοχής σχολείου",
+    annClosed: "Οι εγγραφές για το KMEC 2026 έκλεισαν. Ευχαριστούμε όλα τα σχολεία που δήλωσαν συμμετοχή!", regSoon: "Η φόρμα εγγραφής ανοίγει σύντομα", regSoonP: "Μέχρι τότε, τα σχολεία μπορούν να δηλώσουν ενδιαφέρον με email. Θα σας απαντήσουμε με όλες τις λεπτομέρειες.", regMail: "Email στους διοργανωτές", regReady: "Έτοιμοι για εγγραφή;", regReadyP: "Η φόρμα εγγραφής ανοίγει σε νέα καρτέλα. Συμπληρώστε τη μία φορά ανά σχολείο έως τη Δευτέρα 2 Νοεμβρίου.", regOpen: "Άνοιγμα της φόρμας εγγραφής ↗", regSubject: "KMEC 2026 – Δήλωση συμμετοχής σχολείου",
     all: "Όλες", session: (n) => `${n}η`, video: (n) => `${n}η Σύνοδος`, more: "Προηγούμενες σύνοδοι", less: "Λιγότερες", started: "Το KMEC 2026 είναι σε εξέλιξη!", photo: (n) => `${n}η Σύνοδος` },
 };
 
@@ -588,11 +588,13 @@ function renderAnnounce() {
 function renderRegister() {
   const u = UI[lang], box = document.getElementById("registerBox");
   if (FORM_URL) {
-    const src = FORM_URL + (FORM_URL.includes("?") ? "&" : "?") + "embedded=true";
-    if (!box.querySelector("iframe")) {
-      box.innerHTML = `<iframe src="${src}" title="KMEC registration form" loading="lazy">…</iframe><a class="register__open" href="${FORM_URL}" target="_blank" rel="noopener"></a>`;
-    }
-    box.querySelector(".register__open").textContent = u.regOpen;
+    box.innerHTML = `
+      <div class="register__soon">
+        <div class="register__icon">📝</div>
+        <h3>${u.regReady}</h3>
+        <p>${u.regReadyP}</p>
+        <a class="btn btn--gold" href="${FORM_URL}" target="_blank" rel="noopener">${u.regOpen}</a>
+      </div>`;
   } else {
     const mail = `mailto:${FALLBACK_EMAIL}?subject=${encodeURIComponent(u.regSubject)}`;
     box.innerHTML = `
