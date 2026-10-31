@@ -76,11 +76,12 @@ const SESSIONS = [
     chips: { en: ["116 participants"], el: ["116 συμμετέχοντες"] } },
 ];
 
+// zoom: the YouTube preview has black side bars (4:3 video), so crop them off
 const VIDEOS = [
-  { id: "589rcE4R3WM", n: 16 },
-  { id: "tEGMFp-XYmU", n: 15 },
+  { id: "589rcE4R3WM", n: 16, zoom: true },
+  { id: "tEGMFp-XYmU", n: 15, zoom: true },
   { id: "XX-naBT-MT0", n: 13 },
-  { id: "G-HIyEHSGFU", n: 12 },
+  { id: "G-HIyEHSGFU", n: 12, zoom: true },
 ];
 
 const range = (prefix, nums) => nums.map((i) => `${prefix}-${i}.jpg`);
@@ -443,7 +444,7 @@ function renderTimeline() {
 function renderVideos() {
   document.getElementById("videos-grid").innerHTML = VIDEOS.map((v) => `
     <div class="video">
-      <div class="video__frame">
+      <div class="video__frame${v.zoom ? " video__frame--zoom" : ""}">
         <button type="button" data-yt="${v.id}" aria-label="Play video: ${UI[lang].video(v.n)}"
           style="background-image:url('https://i.ytimg.com/vi/${v.id}/hqdefault.jpg')"></button>
       </div>
@@ -515,7 +516,7 @@ document.getElementById("filters").addEventListener("click", (e) => {
 const lb = document.getElementById("lightbox"), lbImg = document.getElementById("lbImg"), lbCap = document.getElementById("lbCap");
 let cur = 0;
 let lbTimer;
-function openLb(i) {
+function openLb(i, fromKey) {
   const wasOpen = lb.classList.contains("open");
   cur = (i + shown.length) % shown.length;
   lbImg.src = `assets/img/${shown[cur].f}`;
@@ -523,7 +524,8 @@ function openLb(i) {
   clearTimeout(lbTimer);
   lb.hidden = false;
   document.body.style.overflow = "hidden";
-  if (wasOpen) lbImg.animate?.([{ opacity: 0 }, { opacity: 1 }], { duration: 150, easing: "ease-out" });
+  // no crossfade for arrow keys: people step through quickly
+  if (wasOpen && !fromKey) lbImg.animate?.([{ opacity: 0 }, { opacity: 1 }], { duration: 150, easing: "cubic-bezier(0.22, 1, 0.36, 1)" });
   else requestAnimationFrame(() => requestAnimationFrame(() => lb.classList.add("open")));
 }
 function closeLb() {
@@ -542,8 +544,8 @@ lb.addEventListener("click", (e) => { if (e.target === lb) closeLb(); });
 document.addEventListener("keydown", (e) => {
   if (!lb.classList.contains("open")) return;
   if (e.key === "Escape") closeLb();
-  if (e.key === "ArrowLeft") openLb(cur - 1);
-  if (e.key === "ArrowRight") openLb(cur + 1);
+  if (e.key === "ArrowLeft") openLb(cur - 1, true);
+  if (e.key === "ArrowRight") openLb(cur + 1, true);
 });
 
 // ---------- Committees ----------
@@ -712,6 +714,18 @@ if (io && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
       io.observe(el);
     });
   });
+}
+
+// ---------- Nav: highlight the section on screen ----------
+if ("IntersectionObserver" in window) {
+  const navLinks = [...document.querySelectorAll(".nav__menu a[href^='#']")];
+  const spy = new IntersectionObserver((entries) => {
+    entries.forEach((en) => {
+      if (!en.isIntersecting) return;
+      navLinks.forEach((a) => a.toggleAttribute("aria-current", a.getAttribute("href") === `#${en.target.id}`));
+    });
+  }, { rootMargin: "-45% 0px -50% 0px" });
+  navLinks.forEach((a) => { const s = document.querySelector(a.getAttribute("href")); if (s) spy.observe(s); });
 }
 
 // ---------- Init ----------
