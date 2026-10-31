@@ -19,12 +19,12 @@
   <meta property="og:image:alt" content="KMEC 2026: Kalamari Model European Conference, 20–22 November 2026, Thessaloniki">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://hanocybous.github.io/kmec/assets/share.jpg">
-  <meta name="theme-color" content="#3a4390">
+  <meta name="theme-color" content="#1f44c4">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,500;7..72,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/styles.css?v=202610261743">
+  <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css?v=202610311900">
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -80,15 +80,9 @@
   <div class="nav__inner">
     <a class="brand" href="#top" aria-label="KMEC home">
       <svg class="brand__stars" viewBox="0 0 40 40" aria-hidden="true"><g fill="currentColor" id="ring"></g></svg>
-      <span class="brand__text"><b>KMEC</b><small>Kalamari Model European Conference</small></span>
+      <b>KMEC</b>
     </a>
     <div class="nav__menu" id="navLinks">
-      <div class="nav__util">
-        <a href="#resources" data-i18n="nav.res">Resources</a>
-        <a href="#faq" data-i18n="nav.faq">FAQ</a>
-        <a href="#venue" data-i18n="nav.venue">Venue</a>
-        <a href="#contact" data-i18n="nav.contact">Contact</a>
-      </div>
       <nav class="nav__links" aria-label="Main">
         <a href="#about" data-i18n="nav.about">About</a>
         <a href="#committees" data-i18n="nav.com">Committees</a>
@@ -96,108 +90,101 @@
         <a href="#history" data-i18n="nav.history">Past sessions</a>
         <a href="#gallery" data-i18n="nav.gallery">Gallery</a>
       </nav>
+      <div class="nav__util">
+        <a href="#resources" data-i18n="nav.res">Resources</a>
+        <a href="#glossary" data-i18n="nav.glo">Glossary</a>
+        <a href="#faq" data-i18n="nav.faq">FAQ</a>
+        <a href="#venue" data-i18n="nav.venue">Venue</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+      </div>
     </div>
     <div class="nav__actions">
-      <a class="btn btn--gold btn--sm" href="#register" data-i18n="nav.reg">Register</a>
       <button class="lang" id="langBtn" type="button" aria-label="Switch language">ΕΛ</button>
-      <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <a class="btn btn--sm" href="#register" data-i18n="nav.reg">Register</a>
+      <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
     </div>
   </div>
 </header>
 
 <main>
   <!-- HERO -->
-  <section class="hero">
-    <div class="hero__bg" style="background-image:url('assets/img/s18-3.jpg')"></div>
-    <div class="hero__content wrap">
-      <p class="eyebrow eyebrow--light" data-i18n="hero.eyebrow">20th Session · Anniversary Edition</p>
-      <h1 data-i18n="hero.title">Kalamari Model European Conference</h1>
-      <p class="hero__lead" data-i18n="hero.lead">Step into the European Parliament. Debate the issues shaping Europe, write real proposals and vote on them, with around 170 students from across Greece.</p>
-      <div class="hero__meta">
-        <div><span class="k" data-i18n="hero.when">When</span><strong data-i18n="hero.date">20–22 November 2026</strong></div>
-        <div><span class="k" data-i18n="hero.where">Where</span><strong data-i18n="hero.place">Hellenic-French School of Kalamari, Thessaloniki</strong></div>
-        <div><span class="k" data-i18n="hero.lang">Languages</span><strong data-i18n="hero.langs">English &amp; French</strong></div>
+  <section class="hero wrap">
+    <div class="hero__text">
+      <h1 data-i18n="hero.h1">Step into the <span>European Parliament</span></h1>
+      <p class="hero__lead" data-i18n="hero.sub">The 20th Kalamari Model European Conference. Debate the issues shaping Europe, write real proposals and vote on them, with around 170 students from across Greece.</p>
+      <div class="hero__cta">
+        <a class="btn btn--gold" href="#register" data-i18n="hero.cta1">Register your school</a>
+        <a class="btn btn--soft" href="#committees" data-i18n="nav.com">Committees</a>
       </div>
       <div class="countdown" id="countdown" aria-live="polite">
         <div><b id="cd-d">--</b><span data-i18n="cd.d">days</span></div>
         <div><b id="cd-h">--</b><span data-i18n="cd.h">hours</span></div>
         <div><b id="cd-m">--</b><span data-i18n="cd.m">minutes</span></div>
       </div>
-      <div class="hero__cta">
-        <a class="btn btn--gold" href="#register" data-i18n="hero.cta1">Register your school</a>
-        <a class="btn btn--ghost" href="#history" data-i18n="hero.cta2">See past sessions</a>
-        <div class="cal-slot"></div>
-      </div>
+    </div>
+    <div class="hero__photo">
+      <img src="assets/img/s18-3.jpg" alt="Around 180 KMEC delegates, chairs and teachers photographed from above in the school courtyard" width="900" height="557">
+      <p class="hero__date"><strong data-i18n="hero.date">20–22 November 2026</strong><span data-i18n="hero.place">Hellenic-French School of Kalamari, Thessaloniki</span><span class="hero__langs"><span data-i18n="hero.eyebrow">20th Session · Anniversary Edition</span> · <span data-i18n="hero.langs">English &amp; French</span></span></p>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section wrap about" id="about">
+    <h2 data-i18n="about.title">A student parliament for Europe's big questions</h2>
+    <figure class="about__photo">
+      <img src="assets/img/s19-1.jpg" alt="Delegates presenting their committee's proposal from the podium" width="700" height="467" loading="lazy">
+    </figure>
+    <div class="about__text">
+      <p class="statement" data-i18n="about.p1">KMEC is a mostly English-speaking student conference that simulates how the <strong>European Parliament</strong> works. It is organised by alumni of the Hellenic-French School of Kalamari, with the support of the School's Alumni Association.</p>
+      <p data-i18n="about.p2">Delegates tackle questions of equality and of social, political, cultural and environmental policy, with a focus on <strong>geopolitics</strong>, <strong>human rights</strong> and <strong>sustainable development</strong>.</p>
+      <p data-i18n="about.p3">It is open to Gymnasium and Lyceum students from Kalamari, from other schools in Central Macedonia, and from across Greece. For many, it is their very first conference.</p>
     </div>
   </section>
 
   <!-- STATS -->
-  <section class="stats wrap" aria-label="Key numbers">
-    <div class="stat"><b>20</b><span data-i18n="stat.1">sessions since the first KMEC</span></div>
-    <div class="stat"><b>~170</b><span data-i18n="stat.2">student delegates each year</span></div>
-    <div class="stat"><b>7</b><span data-i18n="stat.3">committees: 6 in English, 1 in French</span></div>
-    <div class="stat"><b>3</b><span data-i18n="stat.4">days of debate, ending in a General Assembly</span></div>
-  </section>
-
-  <!-- ABOUT -->
-  <section class="section wrap split" id="about">
-    <div>
-      <p class="eyebrow" data-i18n="about.eyebrow">About KMEC</p>
-      <h2 data-i18n="about.title">A student parliament for Europe's big questions</h2>
-      <p data-i18n="about.p1">KMEC is a mostly English-speaking student conference that simulates how the <strong>European Parliament</strong> works. It is organised by alumni of the Hellenic-French School of Kalamari, with the support of the School's Alumni Association.</p>
-      <p data-i18n="about.p2">Delegates tackle questions of equality and of social, political, cultural and environmental policy, with a focus on <strong>geopolitics</strong>, <strong>human rights</strong> and <strong>sustainable development</strong>.</p>
-      <p data-i18n="about.p3">It is open to Gymnasium and Lyceum students from Kalamari, from other schools in Central Macedonia, and from across Greece. For many, it is their very first conference.</p>
+  <section class="section wrap stats" id="numbers">
+    <div class="stats__list">
+      <h2 data-i18n="stat.title">KMEC in numbers</h2>
+      <dl>
+        <div><dt>20</dt><dd data-i18n="stat.1">sessions since the first KMEC</dd></div>
+        <div><dt>~170</dt><dd data-i18n="stat.2">student delegates each year</dd></div>
+        <div><dt>7</dt><dd data-i18n="stat.3">committees: 6 in English, 1 in French</dd></div>
+        <div><dt>3</dt><dd data-i18n="stat.4">days of debate, ending in a General Assembly</dd></div>
+      </dl>
     </div>
-    <figure class="photo-stack">
-      <img src="assets/img/s19-1.jpg" alt="Students presenting at the podium during KMEC" loading="lazy">
-      <img src="assets/img/s18-1.jpg" alt="A speaker addresses the conference" loading="lazy">
-    </figure>
+    <img class="stats__photo" src="assets/img/s18-1.jpg" alt="A guest speaker addresses the conference from the lectern" width="900" height="600" loading="lazy">
   </section>
 
   <!-- HOW IT WORKS -->
-  <section class="section section--tint" id="how">
+  <section class="section section--surface" id="how">
     <div class="wrap">
-      <p class="eyebrow" data-i18n="how.eyebrow">How it works</p>
       <h2 data-i18n="how.title">From committee room to General Assembly</h2>
       <ol class="steps">
-        <li>
-          <span class="steps__n">1</span>
-          <h3 data-i18n="how.s1t">Join a committee</h3>
-          <p data-i18n="how.s1">Delegates are split into committees, each with its own topic of European interest.</p>
-        </li>
-        <li>
-          <span class="steps__n">2</span>
-          <h3 data-i18n="how.s2t">Debate and share ideas</h3>
-          <p data-i18n="how.s2">Guided by experienced chairs, you research, discuss and listen to other points of view.</p>
-        </li>
-        <li>
-          <span class="steps__n">3</span>
-          <h3 data-i18n="how.s3t">Write a proposal</h3>
-          <p data-i18n="how.s3">Through productive dialogue, each committee agrees on proposals to tackle a critical issue for Europe.</p>
-        </li>
-        <li>
-          <span class="steps__n">4</span>
-          <h3 data-i18n="how.s4t">Vote in the General Assembly</h3>
-          <p data-i18n="how.s4">Committees present their proposals, give constructive criticism on others', and vote, just like the European Parliament.</p>
-        </li>
+        <li><h3 data-i18n="how.s1t">Join a committee</h3><p data-i18n="how.s1">Delegates are split into committees, each with its own topic of European interest.</p></li>
+        <li><h3 data-i18n="how.s2t">Debate and share ideas</h3><p data-i18n="how.s2">Guided by experienced chairs, you research, discuss and listen to other points of view.</p></li>
+        <li><h3 data-i18n="how.s3t">Write a proposal</h3><p data-i18n="how.s3">Through productive dialogue, each committee agrees on proposals to tackle a critical issue for Europe.</p></li>
+        <li><h3 data-i18n="how.s4t">Vote in the General Assembly</h3><p data-i18n="how.s4">Committees present their proposals, give constructive criticism on others', and vote, just like the European Parliament.</p></li>
       </ol>
     </div>
   </section>
 
   <!-- COMMITTEES -->
   <section class="section wrap" id="committees">
-    <p class="eyebrow" data-i18n="com.eyebrow">Committees</p>
-    <h2 data-i18n="com.title">Seven committees, one Europe</h2>
-    <p class="lede" data-i18n="com.lede">Six committees work in English and one in French, each led by experienced chairs. The stars show how demanding each topic is, so you can pick the one that suits you.</p>
+    <div class="sec-head">
+      <h2 data-i18n="com.title">Seven committees, one Europe</h2>
+      <p data-i18n="com.lede">Six committees work in English and one in French, each led by experienced chairs. The stars show how demanding each topic is, so you can pick the one that suits you.</p>
+    </div>
+    <div class="picker" id="committeePicker"></div>
     <div class="committees" id="committeesGrid"></div>
   </section>
 
   <!-- SCHEDULE -->
-  <section class="section section--tint" id="schedule">
+  <section class="section section--surface" id="schedule">
     <div class="wrap">
-      <p class="eyebrow" data-i18n="sch.eyebrow">Programme</p>
-      <h2 data-i18n="sch.title">Three days at KMEC</h2>
-      <p class="lede"><span class="badge" data-i18n="sch.badge">Provisional</span> <span data-i18n="sch.lede">The final timetable will be sent to participating schools before the conference.</span></p>
+      <div class="sec-head">
+        <h2 data-i18n="sch.title">Three days at KMEC</h2>
+        <p><strong data-i18n="sch.badge">Provisional</strong>. <span data-i18n="sch.lede">The final timetable will be sent to participating schools before the conference.</span></p>
+      </div>
       <div class="days" id="dayTabs" role="tablist"></div>
       <ol class="agenda" id="agenda"></ol>
     </div>
@@ -205,9 +192,10 @@
 
   <!-- RESOURCES -->
   <section class="section wrap" id="resources">
-    <p class="eyebrow" data-i18n="res.eyebrow">Resources</p>
-    <h2 data-i18n="res.title">Prepare for KMEC</h2>
-    <p class="lede" data-i18n="res.lede">Guides to help you get ready, whether it's your first conference or you're chairing a committee. All files are PDFs you can read in the browser or download.</p>
+    <div class="sec-head">
+      <h2 data-i18n="res.title">Prepare for KMEC</h2>
+      <p data-i18n="res.lede">Guides to help you get ready, whether it's your first conference or you're chairing a committee. All files are PDFs you can read in the browser or download.</p>
+    </div>
     <div class="res-groups">
       <div class="res-group">
         <h3 data-i18n="res.del">For delegates</h3>
@@ -218,61 +206,59 @@
         <ul class="res-list" id="resChairs"></ul>
       </div>
     </div>
-    <p class="res-credit" data-i18n="res.credit">All guides in this section are materials of the <a href="https://eyp.org" target="_blank" rel="noopener">European Youth Parliament (EYP)</a>, shared here for training purposes. All rights remain with the EYP.</p>
+    <p class="note" data-i18n="res.credit">All guides in this section are materials of the <a href="https://eyp.org" target="_blank" rel="noopener">European Youth Parliament (EYP)</a>, shared here for training purposes. All rights remain with the EYP.</p>
+  </section>
+
+  <!-- GLOSSARY -->
+  <section class="section section--surface" id="glossary">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 data-i18n="glo.title">Words you'll hear</h2>
+        <p data-i18n="glo.lede">First conference? These are the terms you'll hear from day one.</p>
+      </div>
+      <dl class="glossary" id="glossaryList"></dl>
+    </div>
   </section>
 
   <!-- GOALS -->
-  <section class="section wrap" id="goals">
-    <p class="eyebrow" data-i18n="goals.eyebrow">Why we do it</p>
+  <section class="section wrap goals" id="goals">
     <h2 data-i18n="goals.title">What KMEC is for</h2>
-    <div class="cards">
-      <article class="card"><div class="card__icon">💬</div><h3 data-i18n="g1t">Real dialogue</h3><p data-i18n="g1">A safe space to exchange views and express what you believe. In a time of constant polarisation, finding common ground matters more than ever.</p></article>
-      <article class="card"><div class="card__icon">🧠</div><h3 data-i18n="g2t">Critical thinking</h3><p data-i18n="g2">Sharpen your judgement by examining issues that affect young people directly.</p></article>
-      <article class="card"><div class="card__icon">🌍</div><h3 data-i18n="g3t">Staying informed</h3><p data-i18n="g3">Learn about current issues facing Europe, Greece and you, and practise researching and debating them.</p></article>
-      <article class="card"><div class="card__icon">🧩</div><h3 data-i18n="g4t">Problem solving</h3><p data-i18n="g4">Build analytical skills by searching for solutions and proposals to pressing social issues.</p></article>
-      <article class="card"><div class="card__icon">🗣️</div><h3 data-i18n="g5t">Languages</h3><p data-i18n="g5">Practise your English and French in a real setting, with real stakes.</p></article>
+    <div class="goals__list">
+      <div><h3 data-i18n="g1t">Real dialogue</h3><p data-i18n="g1">A safe space to exchange views and express what you believe. In a time of constant polarisation, finding common ground matters more than ever.</p></div>
+      <div><h3 data-i18n="g2t">Critical thinking</h3><p data-i18n="g2">Sharpen your judgement by examining issues that affect young people directly.</p></div>
+      <div><h3 data-i18n="g3t">Staying informed</h3><p data-i18n="g3">Learn about current issues facing Europe, Greece and you, and practise researching and debating them.</p></div>
+      <div><h3 data-i18n="g4t">Problem solving</h3><p data-i18n="g4">Build analytical skills by searching for solutions and proposals to pressing social issues.</p></div>
+      <div><h3 data-i18n="g5t">Languages</h3><p data-i18n="g5">Practise your English and French in a real setting, with real stakes.</p></div>
     </div>
-
     <div class="new-goals">
-      <h3 data-i18n="ng.title">New for our 20th year</h3>
-      <ul>
-        <li data-i18n="ng1"><strong>More schools, more voices.</strong> We want more students from other schools, so more perspectives are heard.</li>
-        <li data-i18n="ng2"><strong>Reaching schools outside the city.</strong> We are inviting more schools from the regions, and aim to partly cover their students' travel and accommodation.</li>
-        <li data-i18n="ng3"><strong>A better experience.</strong> Improved provisions for every participant, plus commemorative printed material for the anniversary.</li>
-        <li data-i18n="ng4"><strong>Wider partnerships.</strong> Working with the Region of Central Macedonia so as many schools as possible can take part.</li>
-      </ul>
+      <img src="assets/img/s19-2.jpg" alt="The General Assembly in the school's main hall" width="700" height="467" loading="lazy">
+      <div>
+        <h3 data-i18n="ng.title">New for our 20th year</h3>
+        <ul>
+          <li data-i18n="ng1"><strong>More schools, more voices.</strong> We want more students from other schools, so more perspectives are heard.</li>
+          <li data-i18n="ng2"><strong>Reaching schools outside the city.</strong> We are inviting more schools from the regions, and aim to partly cover their students' travel and accommodation.</li>
+          <li data-i18n="ng3"><strong>A better experience.</strong> Improved provisions for every participant, plus commemorative printed material for the anniversary.</li>
+          <li data-i18n="ng4"><strong>Wider partnerships.</strong> Working with the Region of Central Macedonia so as many schools as possible can take part.</li>
+        </ul>
+      </div>
     </div>
   </section>
 
   <!-- JOIN -->
   <section class="section section--blue" id="join">
     <div class="wrap">
-      <p class="eyebrow eyebrow--light" data-i18n="join.eyebrow">Take part</p>
       <h2 data-i18n="join.title">Who can join?</h2>
       <div class="roles">
-        <div class="role">
-          <h3 data-i18n="r1t">Students</h3>
-          <p data-i18n="r1">Gymnasium and Lyceum students, from any school, with or without conference experience. Come as a delegate and represent your committee.</p>
-        </div>
-        <div class="role">
-          <h3 data-i18n="r2t">Schools &amp; teachers</h3>
-          <p data-i18n="r2">Bring a group from your school. Teachers accompany their students and are welcome throughout the conference.</p>
-        </div>
-        <div class="role">
-          <h3 data-i18n="r3t">Experienced students</h3>
-          <p data-i18n="r3">Older students and alumni help run the conference as chairs, members of the presidency, or reporters on the press team.</p>
-        </div>
-      </div>
-      <div class="join__cta">
-        <p data-i18n="join.note">Interested in bringing your school to the 20th KMEC? Register below and the organising committee will be in touch.</p>
-        <a class="btn btn--gold" href="#register" data-i18n="join.btn">Register your school</a>
+        <div class="role"><h3 data-i18n="r1t">Students</h3><p data-i18n="r1">Gymnasium and Lyceum students, from any school, with or without conference experience. Come as a delegate and represent your committee.</p></div>
+        <div class="role"><h3 data-i18n="r2t">Schools &amp; teachers</h3><p data-i18n="r2">Bring a group from your school. Teachers accompany their students and are welcome throughout the conference.</p></div>
+        <div class="role"><h3 data-i18n="r3t">Experienced students</h3><p data-i18n="r3">Older students and alumni help run the conference as chairs, members of the presidency, or reporters on the press team.</p></div>
       </div>
       <div class="poster">
-        <img src="assets/img/poster-thumb.jpg" alt="" width="120" height="170" loading="lazy">
+        <img src="assets/img/poster-thumb.jpg" alt="The KMEC 2026 A4 poster" width="120" height="170" loading="lazy">
         <div>
           <h3 data-i18n="pos.title">Spread the word at your school</h3>
           <p data-i18n="pos.p">Print our A4 poster for your noticeboard or share it with students. The QR code takes them straight to this site.</p>
-          <div class="poster__btns">
+          <div class="btns">
             <a class="btn btn--ghost btn--sm" href="assets/docs/kmec-2026-poster-en.pdf" target="_blank" rel="noopener" data-i18n="pos.en">Poster in English (PDF)</a>
             <a class="btn btn--ghost btn--sm" href="assets/docs/kmec-2026-poster-el.pdf" target="_blank" rel="noopener" data-i18n="pos.el">Poster in Greek (PDF)</a>
           </div>
@@ -282,92 +268,74 @@
   </section>
 
   <!-- REGISTER -->
-  <section class="section wrap" id="register">
-    <p class="eyebrow" data-i18n="reg.eyebrow">Registration</p>
-    <h2 data-i18n="reg.title">Register your school</h2>
-    <div class="register">
-      <div class="register__info">
-        <p data-i18n="reg.p1">One form per school, filled in by the accompanying teacher. Tell us how many students you would like to bring and which languages they prefer. We will confirm places by email.</p>
-        <ul class="checks">
-          <li data-i18n="reg.c5"><strong>Deadline: Monday 2 November 2026</strong></li>
-          <li data-i18n="reg.c1">Gymnasium and Lyceum students welcome</li>
-          <li data-i18n="reg.c2">No previous conference experience needed</li>
-          <li data-i18n="reg.c4">Participation fee: €10 per delegate</li>
-          <li data-i18n="reg.c3">Schools outside Thessaloniki: ask us about travel support</li>
-        </ul>
-        <p class="privacy" data-i18n="reg.priv"><strong>Privacy:</strong> we use the details in this form only to organise your school's participation in KMEC 2026 and to contact the accompanying teacher. Only the organising committee sees them. We don't share them with anyone else, and we delete them after the conference. Questions: <a href="mailto:vkarfis1@gmail.com">vkarfis1@gmail.com</a></p>
+  <section class="section" id="register">
+    <div class="wrap">
+      <h2 data-i18n="reg.title">Register your school</h2>
+      <div class="register">
+        <div class="register__info">
+          <p class="statement" data-i18n="join.note">Interested in bringing your school to the 20th KMEC? Register below and the organising committee will be in touch.</p>
+          <p data-i18n="reg.p1">One form per school, filled in by the accompanying teacher. Tell us how many students you would like to bring and which languages they prefer. We will confirm places by email.</p>
+          <ul class="checks">
+            <li data-i18n="reg.c5"><strong>Deadline: Monday 2 November 2026</strong></li>
+            <li data-i18n="reg.c1">Gymnasium and Lyceum students welcome</li>
+            <li data-i18n="reg.c2">No previous conference experience needed</li>
+            <li data-i18n="reg.c4">Participation fee: €10 per delegate</li>
+            <li data-i18n="reg.c3">Schools outside Thessaloniki: ask us about travel support</li>
+          </ul>
+        </div>
+        <div class="register__form">
+          <div id="registerBox"></div>
+          <p class="note" data-i18n="reg.priv"><strong>Privacy:</strong> we use the details in this form only to organise your school's participation in KMEC 2026 and to contact the accompanying teacher. Only the organising committee sees them. We don't share them with anyone else, and we delete them after the conference. Questions: <a href="mailto:vkarfis1@gmail.com">vkarfis1@gmail.com</a></p>
+        </div>
       </div>
-      <div class="register__form" id="registerBox"></div>
     </div>
   </section>
 
   <!-- PRACTICAL INFO -->
-  <section class="section section--tint" id="practical">
-    <div class="wrap">
-      <p class="eyebrow" data-i18n="pr.eyebrow">Good to know</p>
-      <h2 data-i18n="pr.title">Practical info</h2>
-      <div class="practical">
-        <article class="pcard">
-          <div class="pcard__icon" aria-hidden="true">€</div>
-          <h3 data-i18n="pr.feeT">Participation fee</h3>
-          <p class="pcard__big" data-i18n="pr.feeBig">€10 per delegate</p>
-          <p data-i18n="pr.fee">The same for every delegate, whichever school they come from.</p>
-        </article>
-        <article class="pcard">
-          <div class="pcard__icon" aria-hidden="true">👔</div>
-          <h3 data-i18n="pr.dressT">Dress code</h3>
-          <p class="pcard__big" data-i18n="pr.dressBig">Formal, EYP style</p>
-          <p data-i18n="pr.dress">The same as at European Youth Parliament sessions, though a slightly more casual look is fine.</p>
-        </article>
-        <article class="pcard">
-          <div class="pcard__icon" aria-hidden="true">🥪</div>
-          <h3 data-i18n="pr.foodT">Food &amp; breaks</h3>
-          <p class="pcard__big" data-i18n="pr.foodBig">2 meal breaks</p>
-          <p data-i18n="pr.food">Two long breaks with food, plus shorter breaks with coffee, juice and snacks.</p>
-        </article>
-        <article class="pcard">
-          <div class="pcard__icon" aria-hidden="true">📜</div>
-          <h3 data-i18n="pr.certT">Certificates</h3>
-          <p class="pcard__big" data-i18n="pr.certBig">Issued by EYP</p>
-          <p data-i18n="pr.cert">Every delegate receives certificates issued by the European Youth Parliament.</p>
-        </article>
-      </div>
+  <section class="section wrap" id="practical">
+    <h2 data-i18n="pr.title">Practical info</h2>
+    <div class="practical">
+      <div class="pr"><p class="pr__big" data-i18n="pr.feeBig">€10 per delegate</p><div><h3 data-i18n="pr.feeT">Participation fee</h3><p data-i18n="pr.fee">The same for every delegate, whichever school they come from.</p></div></div>
+      <div class="pr"><p class="pr__big" data-i18n="pr.dressBig">Formal, EYP style</p><div><h3 data-i18n="pr.dressT">Dress code</h3><p data-i18n="pr.dress">The same as at European Youth Parliament sessions, though a slightly more casual look is fine.</p></div></div>
+      <div class="pr"><p class="pr__big" data-i18n="pr.foodBig">2 meal breaks</p><div><h3 data-i18n="pr.foodT">Food &amp; breaks</h3><p data-i18n="pr.food">Two long breaks with food, plus shorter breaks with coffee, juice and snacks.</p></div></div>
+      <div class="pr"><p class="pr__big" data-i18n="pr.certBig">Issued by EYP</p><div><h3 data-i18n="pr.certT">Certificates</h3><p data-i18n="pr.cert">Every delegate receives certificates issued by the European Youth Parliament.</p></div></div>
     </div>
   </section>
 
   <!-- BEFORE YOU COME -->
-  <section class="section wrap" id="prepare">
-    <p class="eyebrow" data-i18n="prep.eyebrow">Before you come</p>
-    <h2 data-i18n="prep.title">Your checklist</h2>
-    <ol class="checklist">
-      <li><a href="#register"><b data-i18n="prep.1t">Register your school</b><span data-i18n="prep.1">The accompanying teacher fills in the form by Monday 2 November.</span></a></li>
-      <li><a href="#committees"><b data-i18n="prep.2t">Read your committee's topic</b><span data-i18n="prep.2">Seven committees, six in English and one in French. Each topic has a short description.</span></a></li>
-      <li><a href="#resources"><b data-i18n="prep.3t">Learn how resolutions work</b><span data-i18n="prep.3">Read the Guide to Writing a Resolution and keep the Resolution Phrases handy.</span></a></li>
-      <li><a href="#practical"><b data-i18n="prep.4t">Plan your outfit</b><span data-i18n="prep.4">Formal, as at European Youth Parliament sessions. A slightly more casual look is fine.</span></a></li>
-      <li><a href="#schedule"><b data-i18n="prep.5t">Check the programme</b><span data-i18n="prep.5">Three days, from Friday 20 to Sunday 22 November. Times are still provisional.</span></a></li>
-      <li><a href="#venue"><b data-i18n="prep.6t">Plan your trip</b><span data-i18n="prep.6">The school is in Pylaia, Thessaloniki. Add the dates to your calendar.</span></a></li>
-    </ol>
+  <section class="section section--surface" id="prepare">
+    <div class="wrap">
+      <h2 data-i18n="prep.title">Your checklist</h2>
+      <ol class="checklist">
+        <li><a href="#register"><b data-i18n="prep.1t">Register your school</b><span data-i18n="prep.1">The accompanying teacher fills in the form by Monday 2 November.</span></a></li>
+        <li><a href="#committees"><b data-i18n="prep.2t">Read your committee's topic</b><span data-i18n="prep.2">Seven committees, six in English and one in French. Each topic has a short description.</span></a></li>
+        <li><a href="#resources"><b data-i18n="prep.3t">Learn how resolutions work</b><span data-i18n="prep.3">Read the Guide to Writing a Resolution and keep the Resolution Phrases handy.</span></a></li>
+        <li><a href="#practical"><b data-i18n="prep.4t">Plan your outfit</b><span data-i18n="prep.4">Formal, as at European Youth Parliament sessions. A slightly more casual look is fine.</span></a></li>
+        <li><a href="#schedule"><b data-i18n="prep.5t">Check the programme</b><span data-i18n="prep.5">Three days, from Friday 20 to Sunday 22 November. Times are still provisional.</span></a></li>
+        <li><a href="#venue"><b data-i18n="prep.6t">Plan your trip</b><span data-i18n="prep.6">The school is in Pylaia, Thessaloniki. Add the dates to your calendar.</span></a></li>
+      </ol>
+      <div class="cal-slot"></div>
+    </div>
   </section>
 
   <!-- HISTORY -->
   <section class="section wrap" id="history">
-    <p class="eyebrow" data-i18n="hist.eyebrow">Our story</p>
-    <h2 data-i18n="hist.title">19 sessions, and counting</h2>
-    <p class="lede" data-i18n="hist.lede">KMEC began as an initiative of Lyceum students, working with alumni, to introduce younger students to English-speaking student conferences. Over the years it has grown into a regional event, with guest schools from Thessaloniki, Soufli and Alexandroupoli, and official support from the European Parliament Liaison Office in Greece.</p>
+    <div class="sec-head">
+      <h2 data-i18n="hist.title">19 sessions, and counting</h2>
+      <p data-i18n="hist.lede">KMEC began as an initiative of Lyceum students, working with alumni, to introduce younger students to English-speaking student conferences. Over the years it has grown into a regional event, with guest schools from Thessaloniki, Soufli and Alexandroupoli, and official support from the European Parliament Liaison Office in Greece.</p>
+    </div>
     <ol class="timeline" id="timeline"></ol>
-    <p class="source"><span data-i18n="hist.src">Full archive on the school website:</span> <a href="https://kalamari.gr/index.php/school-life/foreign-languages/kmec" target="_blank" rel="noopener">kalamari.gr/kmec ↗</a></p>
+    <p class="note"><span data-i18n="hist.src">Full archive on the school website:</span> <a href="https://kalamari.gr/index.php/school-life/foreign-languages/kmec" target="_blank" rel="noopener">kalamari.gr/kmec ↗</a></p>
   </section>
 
   <!-- VIDEOS -->
-  <section class="section section--tint" id="videos">
+  <section class="section section--surface" id="videos">
     <div class="wrap">
-      <p class="eyebrow" data-i18n="vid.eyebrow">Watch</p>
       <h2 data-i18n="vid.title">KMEC on video</h2>
       <div class="videos" id="videos-grid"></div>
       <a class="news" href="https://kalamari.gr/images/2026/19th%20KMECNews.pdf" target="_blank" rel="noopener">
         <img src="assets/img/news-cover.jpg" alt="Cover of the 19th KMEC News" loading="lazy">
         <div>
-          <p class="eyebrow" data-i18n="news.eyebrow">Read</p>
           <h3 data-i18n="news.title">19th KMEC News</h3>
           <p data-i18n="news.p">A 16-page photo report of last year's conference, with thanks to everyone who made it happen.</p>
           <span class="link" data-i18n="news.link">Open the PDF ↗</span>
@@ -378,47 +346,46 @@
 
   <!-- GALLERY -->
   <section class="section wrap" id="gallery">
-    <p class="eyebrow" data-i18n="gal.eyebrow">Gallery</p>
-    <h2 data-i18n="gal.title">Moments from past sessions</h2>
-    <div class="filters" id="filters" role="tablist"></div>
+    <div class="gallery-head">
+      <h2 data-i18n="gal.title">Moments from past sessions</h2>
+      <div class="filters" id="filters" role="tablist"></div>
+    </div>
     <div class="scrap-board" id="scrapBoard">
-      <span class="sticker sticker--count" aria-hidden="true"><b>20</b><small data-i18n="gal.stk">sessions</small></span>
-      <span class="sticker sticker--star" aria-hidden="true">★</span>
       <div class="gallery" id="galleryGrid"></div>
     </div>
   </section>
 
   <!-- VENUE -->
-  <section class="section wrap" id="venue">
-    <p class="eyebrow" data-i18n="ven.eyebrow">Venue</p>
-    <h2 data-i18n="ven.title">Getting to KMEC</h2>
-    <div class="venue">
-      <div class="venue__info">
-        <h3 data-i18n="ven.name">Hellenic-French School of Kalamari</h3>
-        <p class="venue__addr" data-i18n="ven.addr">Georgikis Scholis Avenue 44<br>555 35 Pylaia, Thessaloniki, Greece</p>
-        <div class="venue__btns">
-          <a class="btn btn--gold btn--sm" href="https://www.google.com/maps/dir/?api=1&amp;destination=40.562715,22.973656" target="_blank" rel="noopener" data-i18n="ven.gmaps">Directions (Google Maps)</a>
-          <a class="btn btn--line btn--sm" href="https://maps.apple.com/?daddr=40.562715,22.973656&amp;q=Hellenic-French%20School%20of%20Kalamari" target="_blank" rel="noopener" data-i18n="ven.amaps">Apple Maps</a>
+  <section class="section section--surface" id="venue">
+    <div class="wrap">
+      <h2 data-i18n="ven.title">Getting to KMEC</h2>
+      <div class="venue">
+        <div class="venue__info">
+          <h3 class="venue__name" data-i18n="ven.name">Hellenic-French School of Kalamari</h3>
+          <p class="venue__addr" data-i18n="ven.addr">Georgikis Scholis Avenue 44<br>555 35 Pylaia, Thessaloniki, Greece</p>
+          <div class="btns">
+            <a class="btn btn--sm" href="https://www.google.com/maps/dir/?api=1&amp;destination=40.562715,22.973656" target="_blank" rel="noopener" data-i18n="ven.gmaps">Directions (Google Maps)</a>
+            <a class="btn btn--ghost btn--sm" href="https://maps.apple.com/?daddr=40.562715,22.973656&amp;q=Hellenic-French%20School%20of%20Kalamari" target="_blank" rel="noopener" data-i18n="ven.amaps">Apple Maps</a>
+          </div>
+          <ul class="venue__notes">
+            <li data-i18n="ven.n1"><strong>Coming from outside Thessaloniki?</strong> Email the organisers before you travel and we'll send you arrival details for your group.</li>
+            <li data-i18n="ven.n2"><strong>Need travel support?</strong> Tick "Yes" in the registration form and we'll be in touch.</li>
+            <li data-i18n="ven.n3"><strong>Add the dates to your calendar</strong> so your group doesn't miss them.</li>
+          </ul>
+          <div class="cal-slot"></div>
         </div>
-        <ul class="venue__notes">
-          <li data-i18n="ven.n1"><strong>Coming from outside Thessaloniki?</strong> Email the organisers before you travel and we'll send you arrival details for your group.</li>
-          <li data-i18n="ven.n2"><strong>Need travel support?</strong> Tick "Yes" in the registration form and we'll be in touch.</li>
-          <li data-i18n="ven.n3"><strong>Add the dates to your calendar</strong> so your group doesn't miss them.</li>
-        </ul>
-        <div class="cal-slot cal-slot--light"></div>
-      </div>
-      <div class="venue__map">
-        <iframe title="Map: Hellenic-French School of Kalamari" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-          src="https://maps.google.com/maps?q=%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%BF%CE%B3%CE%B1%CE%BB%CE%BB%CE%B9%CE%BA%CE%AE%20%CE%A3%CF%87%CE%BF%CE%BB%CE%AE%20%CE%9A%CE%B1%CE%BB%CE%B1%CE%BC%CE%B1%CF%81%CE%AF&amp;z=15&amp;output=embed"></iframe>
+        <div class="venue__map">
+          <iframe title="Map: Hellenic-French School of Kalamari" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            src="https://maps.google.com/maps?q=%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%BF%CE%B3%CE%B1%CE%BB%CE%BB%CE%B9%CE%BA%CE%AE%20%CE%A3%CF%87%CE%BF%CE%BB%CE%AE%20%CE%9A%CE%B1%CE%BB%CE%B1%CE%BC%CE%B1%CF%81%CE%AF&amp;z=15&amp;output=embed"></iframe>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- FAQ -->
-  <section class="section section--tint" id="faq">
-    <div class="wrap narrow">
-      <p class="eyebrow" data-i18n="faq.eyebrow">Questions</p>
-      <h2 data-i18n="faq.title">Frequently asked</h2>
+  <section class="section wrap" id="faq">
+    <h2 data-i18n="faq.title">Frequently asked</h2>
+    <div class="faq">
       <details><summary data-i18n="q11">When is the registration deadline?</summary><p data-i18n="a11">Monday 2 November 2026. The accompanying teacher should fill in the registration form before the end of that day.</p></details>
       <details><summary data-i18n="q1">Do I need previous conference experience?</summary><p data-i18n="a1">No. KMEC is designed as a first conference experience. Older students and alumni chair the committees and guide new delegates through the procedure.</p></details>
       <details><summary data-i18n="q2">What language is the conference in?</summary><p data-i18n="a2">Mostly English. There are six English-speaking committees and one French-speaking committee.</p></details>
@@ -434,31 +401,49 @@
   </section>
 
   <!-- CONTACT -->
-  <section class="section wrap" id="contact">
-    <p class="eyebrow" data-i18n="ct.eyebrow">Contact</p>
-    <h2 data-i18n="ct.title">The organising committee</h2>
-    <p class="lede" data-i18n="ct.lede">Questions, registrations or partnership ideas? Write to any of us.</p>
-    <div class="team">
-      <a class="person" href="mailto:vkarfis1@gmail.com"><b data-i18n="p1">Vasileios Karfis</b><span>vkarfis1@gmail.com</span></a>
-      <a class="person" href="mailto:chriskounadhs@gmail.com"><b data-i18n="p2">Christos Kounadis</b><span>chriskounadhs@gmail.com</span></a>
-      <a class="person" href="mailto:ppdplxdimitra@gmail.com"><b data-i18n="p3">Dimitra Papadopoulou</b><span>ppdplxdimitra@gmail.com</span></a>
-      <a class="person" href="mailto:bpapazachos@gmail.com"><b data-i18n="p4">Vasileios Papazachos</b><span>bpapazachos@gmail.com</span></a>
-    </div>
-    <div class="supporters">
-      <p class="eyebrow" data-i18n="sup.eyebrow">With the support of</p>
-      <ul>
-        <li data-i18n="sup1">Hellenic-French School of Kalamari</li>
-        <li data-i18n="sup2">Kalamari School Alumni Association</li>
-        <li data-i18n="sup3">European Parliament Liaison Office in Greece (past sessions)</li>
-      </ul>
+  <section class="section section--surface" id="contact">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 data-i18n="ct.title">The organising committee</h2>
+        <p data-i18n="ct.lede">Questions, registrations or partnership ideas? Write to any of us.</p>
+      </div>
+      <div class="team">
+        <a class="person" href="mailto:vkarfis1@gmail.com"><b data-i18n="p1">Vasileios Karfis</b><span>vkarfis1@gmail.com</span></a>
+        <a class="person" href="mailto:chriskounadhs@gmail.com"><b data-i18n="p2">Christos Kounadis</b><span>chriskounadhs@gmail.com</span></a>
+        <a class="person" href="mailto:ppdplxdimitra@gmail.com"><b data-i18n="p3">Dimitra Papadopoulou</b><span>ppdplxdimitra@gmail.com</span></a>
+        <a class="person" href="mailto:bpapazachos@gmail.com"><b data-i18n="p4">Vasileios Papazachos</b><span>bpapazachos@gmail.com</span></a>
+      </div>
+      <div class="supporters">
+        <h3 data-i18n="sup.eyebrow">With the support of</h3>
+        <ul>
+          <li data-i18n="sup1">Hellenic-French School of Kalamari</li>
+          <li data-i18n="sup2">Kalamari School Alumni Association</li>
+          <li data-i18n="sup3">European Parliament Liaison Office in Greece (past sessions)</li>
+        </ul>
+      </div>
     </div>
   </section>
 </main>
 
+<!-- FOOTER -->
 <footer class="footer">
-  <div class="wrap footer__inner">
-    <p><strong>KMEC</strong> · Kalamari Model European Conference · <span data-i18n="ft.date">20–22 November 2026</span></p>
-    <p><a href="#top" data-i18n="ft.top">Back to top ↑</a></p>
+  <div class="wrap">
+    <div class="footer__row">
+      <p class="footer__what"><strong>Kalamari Model European Conference</strong><br><span data-i18n="ft.date">20–22 November 2026</span> · Pylaia, Thessaloniki</p>
+      <nav class="footer__links" aria-label="Footer">
+        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="#committees" data-i18n="nav.com">Committees</a>
+        <a href="#schedule" data-i18n="nav.sch">Schedule</a>
+        <a href="#resources" data-i18n="nav.res">Resources</a>
+        <a href="#glossary" data-i18n="nav.glo">Glossary</a>
+        <a href="#history" data-i18n="nav.history">Past sessions</a>
+        <a href="#gallery" data-i18n="nav.gallery">Gallery</a>
+        <a href="#venue" data-i18n="nav.venue">Venue</a>
+        <a href="#faq" data-i18n="nav.faq">FAQ</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+      </nav>
+    </div>
+    <p class="footer__legal"><span>Photos: kalamari.gr</span><a href="#top" data-i18n="ft.top">Back to top ↑</a></p>
   </div>
 </footer>
 
@@ -470,6 +455,6 @@
   <p id="lbCap"></p>
 </div>
 
-<script src="assets/main.js?v=202610261749"></script>
+<script src="assets/main.js?v=202610311900"></script>
 </body>
 </html>

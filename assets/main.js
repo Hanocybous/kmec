@@ -142,6 +142,44 @@ const COMMITTEES = [
     chairs: null, guide: null },
 ];
 
+// ---------- Committee picker labels ----------
+const PICK = {
+  en: { lang: "Language", level: "Difficulty", all: "All", any: "Any", en: "English", fr: "French", easy: "Easier", mid: "Medium", hard: "Challenging",
+    count: (n) => n === 1 ? "1 committee matches" : `${n} committees match`, none: "No committee matches. Try another combination." },
+  el: { lang: "Γλώσσα", level: "Δυσκολία", all: "Όλες", any: "Όλες", en: "Αγγλικά", fr: "Γαλλικά", easy: "Πιο εύκολες", mid: "Μέτριες", hard: "Απαιτητικές",
+    count: (n) => n === 1 ? "1 επιτροπή ταιριάζει" : `${n} επιτροπές ταιριάζουν`, none: "Καμία επιτροπή δεν ταιριάζει. Δοκίμασε άλλο συνδυασμό." },
+};
+// Difficulty bands from the star ratings: 1-2 easier, 3 medium, 4-5 challenging.
+const BANDS = { easy: [1, 2], mid: [3, 3], hard: [4, 5] };
+
+// ---------- Glossary ----------
+const GLOSSARY = [
+  { term: t("Delegate", "Σύνεδρος"),
+    def: t("A student taking part in a committee. That's you.", "Μαθητής ή μαθήτρια που συμμετέχει σε μια επιτροπή. Δηλαδή εσύ.") },
+  { term: t("Committee", "Επιτροπή"),
+    def: t("A group of delegates working on one topic, named after a real European Parliament committee (INTA, AFET, ENVI…).", "Ομάδα συνέδρων που δουλεύει πάνω σε ένα θέμα. Παίρνει το όνομά της από μια πραγματική επιτροπή του Ευρωπαϊκού Κοινοβουλίου (INTA, AFET, ENVI…).") },
+  { term: t("Chair", "Συντονιστής/Συντονίστρια"),
+    def: t("An experienced student who guides the committee's discussion and helps it reach agreement.", "Έμπειρος μαθητής ή μαθήτρια που καθοδηγεί τη συζήτηση της επιτροπής και τη βοηθά να καταλήξει σε συμφωνία.") },
+  { term: t("Teambuilding", "Teambuilding"),
+    def: t("Games at the start of the conference so your committee gets to know each other before the debate begins.", "Παιχνίδια στην αρχή του συνεδρίου, για να γνωριστεί η επιτροπή σου πριν ξεκινήσει η συζήτηση.") },
+  { term: t("Committee work", "Εργασία επιτροπών"),
+    def: t("The sessions where your committee researches the topic, debates ideas and writes its resolution.", "Οι συνεδριάσεις όπου η επιτροπή σου ερευνά το θέμα, συζητά ιδέες και γράφει το ψήφισμά της.") },
+  { term: t("Lobbying", "Διαπραγματεύσεις"),
+    def: t("Talking to other delegates to win support for an idea before it is written down or voted on.", "Συζητήσεις με άλλους συνέδρους για να κερδίσεις υποστήριξη για μια ιδέα, πριν γραφτεί ή ψηφιστεί.") },
+  { term: t("Resolution", "Ψήφισμα"),
+    def: t("The document each committee writes: what the problem is and what Europe should do about it.", "Το κείμενο που γράφει κάθε επιτροπή: ποιο είναι το πρόβλημα και τι πρέπει να κάνει η Ευρώπη γι' αυτό.") },
+  { term: t("Introductory clauses", "Εισαγωγικές ρήτρες"),
+    def: t("The first part of a resolution. They set out the facts and explain why the problem matters.", "Το πρώτο μέρος του ψηφίσματος. Παρουσιάζουν τα δεδομένα και εξηγούν γιατί το πρόβλημα είναι σημαντικό.") },
+  { term: t("Operative clauses", "Διατακτικές ρήτρες"),
+    def: t("The second part: the actions your committee proposes. Each one starts with a verb such as \"Calls for\" or \"Encourages\".", "Το δεύτερο μέρος: οι ενέργειες που προτείνει η επιτροπή σου. Η καθεμία ξεκινά με ένα ρήμα, όπως «Calls for» ή «Encourages».") },
+  { term: t("General Assembly", "Γενική Συνέλευση"),
+    def: t("The final day, when all committees meet. Each one presents its resolution, the others debate it, and everyone votes.", "Η τελευταία μέρα, όταν συναντιούνται όλες οι επιτροπές. Η καθεμία παρουσιάζει το ψήφισμά της, οι άλλες το συζητούν και όλοι ψηφίζουν.") },
+  { term: t("For, against, abstain", "Υπέρ, κατά, αποχή"),
+    def: t("Your three choices in a vote. Abstaining means you choose not to vote either way.", "Οι τρεις επιλογές σου σε μια ψηφοφορία. Αποχή σημαίνει ότι επιλέγεις να μην ψηφίσεις ούτε υπέρ ούτε κατά.") },
+  { term: t("Presidency", "Προεδρείο"),
+    def: t("The team of older students who lead the conference and run the General Assembly.", "Η ομάδα μεγαλύτερων μαθητών που διοργανώνει το συνέδριο και διευθύνει τη Γενική Συνέλευση.") },
+];
+
 // ---------- Resources (files in assets/docs) ----------
 const RESOURCES = {
   delegates: [
@@ -196,13 +234,15 @@ const EL = {
   "nav.history": "Ιστορικό", "nav.gallery": "Φωτογραφίες", "nav.faq": "Ερωτήσεις", "nav.contact": "Επικοινωνία",
   "hero.eyebrow": "20ή Σύνοδος · Επετειακή διοργάνωση",
   "hero.title": "Kalamari Model European Conference",
+  "hero.h1": "Μπες στο <span>Ευρωπαϊκό Κοινοβούλιο</span>",
+  "hero.sub": "Το 20ό Kalamari Model European Conference. Συζήτησε τα θέματα που διαμορφώνουν την Ευρώπη, γράψε πραγματικές προτάσεις και ψήφισέ τες, μαζί με περίπου 170 μαθητές από όλη την Ελλάδα.",
   "hero.lead": "Μπες στο Ευρωπαϊκό Κοινοβούλιο. Συζήτησε τα θέματα που διαμορφώνουν την Ευρώπη, γράψε πραγματικές προτάσεις και ψήφισέ τες, μαζί με περίπου 170 μαθητές από όλη την Ελλάδα.",
   "hero.when": "Πότε", "hero.date": "20–22 Νοεμβρίου 2026",
   "hero.where": "Πού", "hero.place": "Ελληνογαλλική Σχολή Καλαμαρί, Θεσσαλονίκη",
   "hero.lang": "Γλώσσες", "hero.langs": "Αγγλικά &amp; Γαλλικά",
   "cd.d": "ημέρες", "cd.h": "ώρες", "cd.m": "λεπτά",
   "hero.cta1": "Δήλωσε συμμετοχή", "hero.cta2": "Δες τις προηγούμενες συνόδους",
-  "stat.1": "σύνοδοι από το πρώτο KMEC", "stat.2": "μαθητές-σύνεδροι κάθε χρόνο",
+  "stat.title": "Το KMEC σε αριθμούς", "stat.1": "σύνοδοι από το πρώτο KMEC", "stat.2": "μαθητές-σύνεδροι κάθε χρόνο",
   "stat.3": "επιτροπές: 6 αγγλόφωνες, 1 γαλλόφωνη", "stat.4": "ημέρες διαλόγου, με κατάληξη τη Γενική Συνέλευση",
   "about.eyebrow": "Σχετικά με το KMEC",
   "about.title": "Ένα μαθητικό κοινοβούλιο για τα μεγάλα ερωτήματα της Ευρώπης",
@@ -253,7 +293,8 @@ const EL = {
   "sup1": "Ελληνογαλλική Σχολή Καλαμαρί", "sup2": "Σύλλογος Αποφοίτων Σχολής Καλαμαρί",
   "sup3": "Γραφείο του Ευρωπαϊκού Κοινοβουλίου στην Ελλάδα (προηγούμενες σύνοδοι)",
   "ft.date": "20–22 Νοεμβρίου 2026", "ft.top": "Επιστροφή στην κορυφή ↑",
-  "nav.com": "Επιτροπές", "nav.res": "Υλικό",
+  "nav.com": "Επιτροπές", "nav.res": "Υλικό", "nav.glo": "Λεξιλόγιο",
+  "glo.title": "Λέξεις που θα ακούσεις", "glo.lede": "Πρώτη φορά σε συνέδριο; Αυτοί είναι οι όροι που θα ακούσεις από την πρώτη μέρα.",
   "res.eyebrow": "Υλικό", "res.title": "Προετοιμασία για το KMEC",
   "res.lede": "Οδηγοί για να προετοιμαστείς, είτε είναι το πρώτο σου συνέδριο είτε συντονίζεις επιτροπή. Όλα τα αρχεία είναι PDF που ανοίγουν στον browser ή κατεβαίνουν.",
   "res.del": "Για συνέδρους", "res.chair": "Για συντονιστές",
@@ -324,6 +365,8 @@ function setLang(l) {
   renderTimeline();
   renderVideos();
   renderCommittees();
+  renderPicker();
+  renderGlossary();
   renderCalendar();
   renderResources();
   renderSchedule();
@@ -471,14 +514,23 @@ document.getElementById("filters").addEventListener("click", (e) => {
 // ---------- Lightbox ----------
 const lb = document.getElementById("lightbox"), lbImg = document.getElementById("lbImg"), lbCap = document.getElementById("lbCap");
 let cur = 0;
+let lbTimer;
 function openLb(i) {
+  const wasOpen = lb.classList.contains("open");
   cur = (i + shown.length) % shown.length;
   lbImg.src = `assets/img/${shown[cur].f}`;
   lbImg.alt = lbCap.textContent = `KMEC · ${UI[lang].photo(shown[cur].n)}`;
+  clearTimeout(lbTimer);
   lb.hidden = false;
   document.body.style.overflow = "hidden";
+  if (wasOpen) lbImg.animate?.([{ opacity: 0 }, { opacity: 1 }], { duration: 150, easing: "ease-out" });
+  else requestAnimationFrame(() => requestAnimationFrame(() => lb.classList.add("open")));
 }
-function closeLb() { lb.hidden = true; document.body.style.overflow = ""; }
+function closeLb() {
+  lb.classList.remove("open");
+  document.body.style.overflow = "";
+  lbTimer = setTimeout(() => { lb.hidden = true; }, 150);
+}
 document.getElementById("galleryGrid").addEventListener("click", (e) => {
   const b = e.target.closest("button[data-i]");
   if (b) openLb(Number(b.dataset.i));
@@ -488,20 +540,63 @@ document.getElementById("lbPrev").onclick = () => openLb(cur - 1);
 document.getElementById("lbNext").onclick = () => openLb(cur + 1);
 lb.addEventListener("click", (e) => { if (e.target === lb) closeLb(); });
 document.addEventListener("keydown", (e) => {
-  if (lb.hidden) return;
+  if (!lb.classList.contains("open")) return;
   if (e.key === "Escape") closeLb();
   if (e.key === "ArrowLeft") openLb(cur - 1);
   if (e.key === "ArrowRight") openLb(cur + 1);
 });
 
 // ---------- Committees ----------
+let pickLang = "all", pickLevel = "any";
+function renderPicker(animate) {
+  const p = PICK[lang];
+  const group = (key, label, opts, cur) => `
+    <div class="picker__group" role="group" aria-label="${label}">
+      <span class="picker__label">${label}</span>
+      ${opts.map(([v, txt]) => `<button type="button" data-${key}="${v}" aria-pressed="${v === cur}">${txt}</button>`).join("")}
+    </div>`;
+  document.getElementById("committeePicker").innerHTML =
+    group("lang", p.lang, [["all", p.all], ["EN", p.en], ["FR", p.fr]], pickLang) +
+    group("level", p.level, [["any", p.any], ["easy", p.easy], ["mid", p.mid], ["hard", p.hard]], pickLevel) +
+    `<p class="picker__count" id="pickCount" aria-live="polite"></p>`;
+  applyPicker(animate);
+}
+function applyPicker(animate) {
+  let n = 0;
+  document.querySelectorAll("#committeesGrid .committee").forEach((el) => {
+    const lv = Number(el.dataset.level), band = BANDS[pickLevel];
+    const ok = (pickLang === "all" || el.dataset.lang === pickLang) && (!band || (lv >= band[0] && lv <= band[1]));
+    el.hidden = !ok;
+    el.classList.remove("enter");
+    if (ok && animate) {
+      void el.offsetWidth; // restart the animation
+      el.style.setProperty("--i", n);
+      el.classList.add("enter");
+    }
+    if (ok) n++;
+  });
+  document.getElementById("pickCount").textContent = n ? PICK[lang].count(n) : PICK[lang].none;
+}
+document.getElementById("committeePicker").addEventListener("click", (e) => {
+  const b = e.target.closest("button");
+  if (!b) return;
+  if (b.dataset.lang) pickLang = b.dataset.lang;
+  if (b.dataset.level) pickLevel = b.dataset.level;
+  renderPicker(true);
+});
+
+function renderGlossary() {
+  document.getElementById("glossaryList").innerHTML = GLOSSARY.map((g) =>
+    `<div><dt>${g.term[lang]}</dt><dd>${g.def[lang]}</dd></div>`).join("");
+}
+
 function renderCommittees() {
   const u = UI[lang];
   document.getElementById("committeesGrid").innerHTML = COMMITTEES.map((c) => {
     const fr = c.lang === "FR";
     const stars = "★".repeat(c.level) + `<span class="off">${"★".repeat(5 - c.level)}</span>`;
     return `
-    <article class="committee${fr ? " committee--fr" : ""}">
+    <article class="committee${fr ? " committee--fr" : ""}" data-lang="${c.lang}" data-level="${c.level}">
       <div class="committee__top">
         <span class="committee__lang">${fr ? "FR · " + u.comFR : "EN · " + u.comEN}</span>
         <span class="stars" title="${u.level}: ${c.level}/5" aria-label="${u.level}: ${c.level}/5">${stars}</span>
@@ -525,8 +620,8 @@ let dayIdx = Math.max(0, SCHEDULE.findIndex((d) => d.date === new Date().toISOSt
 function renderSchedule() {
   document.getElementById("dayTabs").innerHTML = SCHEDULE.map((d, i) =>
     `<button type="button" role="tab" data-day="${i}" aria-selected="${i === dayIdx}"><b>${lang === "el" ? "Ημέρα" : "Day"} ${i + 1}</b><span>${d.label[lang]}</span></button>`).join("");
-  document.getElementById("agenda").innerHTML = SCHEDULE[dayIdx].items.map(([time, title, desc]) => `
-    <li><time>${time}</time><div><h3>${title[lang]}</h3>${desc ? `<p>${desc[lang]}</p>` : ""}</div></li>`).join("");
+  document.getElementById("agenda").innerHTML = SCHEDULE[dayIdx].items.map(([time, title, desc], i) => `
+    <li style="--i:${i}"><time>${time}</time><div><h3>${title[lang]}</h3>${desc ? `<p>${desc[lang]}</p>` : ""}</div></li>`).join("");
 }
 document.getElementById("dayTabs").addEventListener("click", (e) => {
   const b = e.target.closest("button[data-day]");
@@ -560,10 +655,9 @@ function renderCalendar() {
   const google = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${e(CAL.title)}&dates=20261120/20261123&details=${e(CAL.details)}&location=${e(CAL.location)}`;
   const outlook = `https://outlook.live.com/calendar/0/action/compose?subject=${e(CAL.title)}&startdt=2026-11-20&enddt=2026-11-23&allday=true&body=${e(CAL.details)}&location=${e(CAL.location)}`;
   document.querySelectorAll(".cal-slot").forEach((slot) => {
-    const light = slot.classList.contains("cal-slot--light");
     slot.innerHTML = `
       <details class="cal">
-        <summary class="btn ${light ? "btn--line" : "btn--ghost"}">📅 ${u.calAdd}</summary>
+        <summary class="btn btn--ghost btn--sm">${u.calAdd}</summary>
         <div class="cal__menu">
           <a href="${google}" target="_blank" rel="noopener">Google Calendar</a>
           <a href="assets/kmec-2026.ics" download>${u.calApple}</a>
@@ -590,19 +684,17 @@ function renderRegister() {
   if (FORM_URL) {
     box.innerHTML = `
       <div class="register__soon">
-        <div class="register__icon">📝</div>
         <h3>${u.regReady}</h3>
         <p>${u.regReadyP}</p>
-        <a class="btn btn--gold" href="${FORM_URL}" target="_blank" rel="noopener">${u.regOpen}</a>
+        <a class="btn" href="${FORM_URL}" target="_blank" rel="noopener">${u.regOpen}</a>
       </div>`;
   } else {
     const mail = `mailto:${FALLBACK_EMAIL}?subject=${encodeURIComponent(u.regSubject)}`;
     box.innerHTML = `
       <div class="register__soon">
-        <div class="register__icon">📝</div>
         <h3>${u.regSoon}</h3>
         <p>${u.regSoonP}</p>
-        <a class="btn btn--gold" href="${mail}">${u.regMail}</a>
+        <a class="btn" href="${mail}">${u.regMail}</a>
       </div>`;
   }
 }
@@ -611,9 +703,16 @@ function renderRegister() {
 const io = "IntersectionObserver" in window ? new IntersectionObserver((entries) => {
   entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } });
 }, { threshold: 0.12 }) : null;
-document.querySelectorAll(".section h2, .card, .steps li, .role, .person, .photo-stack, .new-goals, .committee, .register, .pcard, .checklist li").forEach((el) => {
-  if (io) { el.classList.add("reveal"); io.observe(el); }
-});
+// Each section's parts rise in one after another.
+if (io && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  document.querySelectorAll(".section").forEach((sec) => {
+    sec.querySelectorAll(":scope > .wrap > *, :scope > :not(.wrap), .steps > li, .faq > details, .practical > .pr, .goals__list > div, .roles > .role, .team > .person, .checklist > li").forEach((el, i) => {
+      el.classList.add("reveal");
+      el.style.setProperty("--d", `${Math.min(i, 6) * 70}ms`);
+      io.observe(el);
+    });
+  });
+}
 
 // ---------- Init ----------
 let saved = null;
